@@ -8,3 +8,7 @@
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 ![Status: Concept](https://img.shields.io/badge/Status-Early%20Concept-blue)
+
+## The AI ​​Challenge
+
+Artificial intelligence is revolutionizing the Art of Code. Beyond obvious benefits, new challenges are emerging. The most pressing is _trust_. The Camus project aims to address it by providing the required tools.
