@@ -1,9 +1,7 @@
 # The Camus Project
 
-> Misnaming things adds to the world’s suffering.
-> 
-> _Mal nommer un objet, c’est ajouter au malheur de ce monde._
-> 
+> Misnaming things adds to the world’s suffering.<br>
+> _Mal nommer un objet, c’est ajouter au malheur de ce monde._<br>
 > — Albert Camus, *Sur une philosophie de l’expression*, 1944.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
