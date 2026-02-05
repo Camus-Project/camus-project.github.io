@@ -13,7 +13,7 @@ Artificial intelligence is revolutionizing the Art of Code. Beyond obvious benef
 
 ### The Problem of Trust
 
-Ultimately, trust is a human problem, not a technical one. And no human problem has a purely technical solution, but technology helps to find a human solution.
+Ultimately, trust is a human problem, not a technical one. And no human problem has a purely technical solution, but technology helps to find a human one.
 
 Trust rests on a promise made by humans. This promise binds them. This commitment is proven by signatures. Only then the technical aspect begins: it aims to guarantee the authenticity and persistence of these signatures. Because if the commitment is not honored, these signatures are used to demand redress, and this redress is refused if the signatures have not persisted until then or if their authenticity is not verified.
 
@@ -21,7 +21,7 @@ AI cannot sign. Or only by delegation from humans, who assume responsibility for
 
 Moreover, if AIs were to become responsible, they would have every interest in using our tools to supervise their irresponsible agents and prove their good faith.
 
-### The Solution
+### The Solution, Ultimately
 
 Distributing software entails responsibility. This responsibility is only assumed if the code is _mastered_.
 
