@@ -1,10 +1,10 @@
 # Camus Project
 
-> Misname an object adds to the misfortune of this world.
+> Misnaming things adds to the world’s suffering.
 > 
-> Mal nommer un objet, c’est ajouter au malheur de ce monde.
+> _Mal nommer un objet, c’est ajouter au malheur de ce monde._
 > 
-> — Albert Camus, *Sur une philosophie de l’expression*, 1944
+> — Albert Camus, *Sur une philosophie de l’expression*, 1944.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 ![Status: Concept](https://img.shields.io/badge/Status-Early%20Concept-blue)
@@ -17,8 +17,17 @@ Artificial intelligence is revolutionizing the Art of Code. Beyond obvious benef
 
 Ultimately, trust is a human problem, not a technical one. And no human problem has a purely technical solution, but technology helps to find a human solution.
 
-Trust rests on a promise made by human beings. This promise binds them. This commitment is proven by signatures. Only then the technical aspect begins: it aims to guarantee the authenticity and persistence of these signatures. Because if the commitment is not honored, these signatures are used to demand redress, and this redress is refused if the signatures have not persisted until then or if their authenticity is not verified.
+Trust rests on a promise made by humans. This promise binds them. This commitment is proven by signatures. Only then the technical aspect begins: it aims to guarantee the authenticity and persistence of these signatures. Because if the commitment is not honored, these signatures are used to demand redress, and this redress is refused if the signatures have not persisted until then or if their authenticity is not verified.
 
-AI cannot sign. Or only by delegation from human beings, who assume responsibility for the signature and any potential redress. AI is not a subject of law. Whether it could one day become so is more than hypothetical and debatable, and falls outside the scope of the problems that the Camus project aims to solve.
+AI cannot sign. Or only by delegation from humans, who assume responsibility for the signature and any potential redress. AI is not a subject of law. Whether it could one day become so is more than hypothetical and debatable, and falls outside the scope of the problems that the Camus project aims to solve.
 
 Moreover, if AIs were to become responsible, they would have every interest in using our tools to supervise their irresponsible agents and prove their good faith.
+
+### The Solution
+
+Distributing software entails responsibility. This responsibility is only assumed if the code is _mastered_.
+
+The Camus project aims to produce the tools to measure this responsibility almost line by line. It involves _conceptualizing_ an entire project in the same terms as AI, _understanding_ the intent that each function claims to fulfill, and _certifying_ that the code it uses to do so actually achieves it.
+
+At the end of this process, each function is explicitly **signed by a human auditor**, who assumes responsibility for it. 
+Only then can the software be considered fit for distribution.
