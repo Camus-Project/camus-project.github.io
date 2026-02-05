@@ -34,8 +34,8 @@ Only then can the software be considered fit for distribution.
 
 So we need to master AI code. We must conceptualize with the AI, understand its code, and certify it. What tools are required to enable this ?
 
-### Conceptualizing
+### Conceptualizing — the _Lexicon_
 
-### Understanding
+### Understanding — the _Grammar_
 
-### Certifying
+### Certifying — the _Signature_
