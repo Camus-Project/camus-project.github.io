@@ -1,4 +1,4 @@
-# Camus Project
+# The Camus Project
 
 > Misnaming things adds to the world’s suffering.
 > 
