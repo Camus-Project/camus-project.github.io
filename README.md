@@ -29,3 +29,11 @@ The Camus project aims to produce the tools to measure this responsibility almos
 
 At the end of this process, each function is explicitly **signed by a human auditor**, who assumes responsibility for it. 
 Only then can the software be considered fit for distribution.
+
+## The Camus Method
+
+### Conceptualizing
+
+### Understanding
+
+### Certifying
