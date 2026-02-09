@@ -36,6 +36,17 @@ So we need to master AI code. We must conceptualize with the AI, understand its 
 
 ### Conceptualizing — the _Lexicon_
 
+The lexicon is the first requirement of the Camus Method.
+
+A lexicon is a finite, explicit set of _terms_ describing _what_ the software manipulates.
+Each term names a concept shared and understood by humans and AI.
+Terms are _realized by_ classes, objects or structures.
+
+Terms may include subterms, which are themselves terms.
+Each subterm is realized as a property of the realization of the term that contains it.
+
+Each object, class or structure MUST realize explicitly a term in the lexicon.
+
 ### Understanding — the _Grammar_
 
 ### Certifying — the _Signature_
