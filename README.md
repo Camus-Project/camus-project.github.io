@@ -34,6 +34,16 @@ Only then can the software be considered fit for distribution.
 
 So we need to master AI code. We must conceptualize with the AI, understand its code, and certify it. What tools are required to enable this ?
 
+### Requirements
+
+Camus requires some structural elements from the host programming language in order to operate:
+
+1. The ability to write comments, to host the Camus SL overlay.
+2. The ability to define classes, structures, or objects.
+3. The ability to define functions.
+
+Most modern languages provide these three features.
+
 ### Conceptualizing — the _Lexicon_
 
 The lexicon is the first requirement of the Camus Method.
