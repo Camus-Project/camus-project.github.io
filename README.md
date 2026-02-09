@@ -59,4 +59,18 @@ Each object, class or structure MUST realize explicitly a term in the lexicon.
 
 ### Understanding — the _Grammar_
 
+Grammar is a set of rules that the programmer, assumed to be an AI, MUST follow. These rules guarantee that the code is readable and understandable to a human reviewer.
+
+It ensures that manipulations of terms are explicit, auditable, and predictable.
+
+#### `kiss` as the Grammar Gardian
+
+Ensuring respect for Grammar is the primary role of `kiss`, Camus' companion tool.
+
+`kiss check` must be run before human review **and** compilation.
+
+Its job is to verify that the programmer respects the Grammar rules, and that any exception to a rule is already **known, documented and intentional**.
+
+#### The Rules
+
 ### Certifying — the _Signature_
