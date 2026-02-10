@@ -105,12 +105,40 @@ Lines longer than 80 characters SHOULD be avoided and trigger a warning.
 Functions MUST not exceed 50 lines.
 Functions longer than 20 lines SHOULD be avoided and trigger a warning.
 
-##### Rule 9 — Parameter Passing
+##### Rule 9 — Parameter Passing
 
 All parameters MUST be passed by reference.
 
 ##### Rule 10 — Variable Mutability
 
 All variables MUST be immutable by default, unless explicitly declared mutable.
+
+##### Rule 11 — No Public Primitives
+
+Primitives MUST NOT be exposed as public variables or returned by functions.
+Only components that realize explicitly declared terms can be used publicly.
+
+##### Rule 12 — No Anonymous Functions
+
+Anonymous functions (lambdas, closures without names) are FORBIDDEN.
+Every function must have a unique, explicit name to ensure auditability and traceability.
+
+##### Rule 13 — No Inheritance
+
+Inheritance is FORBIDDEN.
+Composition MUST be favored to combine behaviors and functionalities.
+
+##### Rule 14 — No Interfaces
+
+Interfaces are FORBIDDEN.
+Components communicate only through explicit terms and function claims.
+
+##### Rule 15 — Explicit Exceptions
+
+It is permissible to deviate from any previous rule or prohibition if and only if the deviation is explicitly documented.
+Exceptions can be declared at two levels:
+
+1. Project level – specify which rules or prohibitions are relaxed, whether violations generate warnings instead of errors, and define the scope (which folders/files Camus applies to or excludes).
+2. Function/Component level – mark a specific rule as exempted, either silently or with a warning for audit purposes.
 
 ### Certifying — the _Signature_
