@@ -83,4 +83,13 @@ Each component MUST realize exactly one term, which MUST be explicitly declared.
 
 Every function MUST declare the terms it expects as parameters and the terms it returns.
 
+##### Rule 4 — Function Claim
+
+Every function MUST declare its claim.
+
+##### Rule 5 — Function Constraints
+
+A function MAY declare constraints on the terms it receives and returns. These constraints MUST be explicit and verifiable.
+
+
 ### Certifying — the _Signature_
