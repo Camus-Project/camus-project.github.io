@@ -73,4 +73,8 @@ Its job is to verify that the programmer respects the Grammar rules, and that an
 
 #### The Rules
 
+##### Rule 1
+
+Each component MUST realize exactly one term, which MUST be explicitly declared.
+
 ### Certifying — the _Signature_
