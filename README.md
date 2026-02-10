@@ -141,4 +141,8 @@ Exceptions can be declared at two levels:
 1. Project level – specify which rules or prohibitions are relaxed, whether violations generate warnings instead of errors, and define the scope (which folders/files Camus applies to or excludes).
 2. Function/Component level – mark a specific rule as exempted, either silently or with a warning for audit purposes.
 
+<!-- 15 rulez! Yeah!
+![Moses/Mel Brook breaking one table of the Laws](https://i.makeagif.com/media/11-03-2015/cu9Q-o.gif)
+-->
+
 ### Certifying — the _Signature_
