@@ -91,5 +91,26 @@ Every function MUST declare its claim.
 
 A function MAY declare constraints on the terms it receives and returns. These constraints MUST be explicit and verifiable.
 
+##### Rule 6 — Block Depth
+
+Functions MUST limit block depth to one level. Nested blocks are forbidden.
+
+##### Rule 7 — Line Length
+
+Lines MUST not exceed 120 characters.
+Lines longer than 80 characters SHOULD be avoided and trigger a warning.
+
+##### Rule 8 — Function Length
+
+Functions MUST not exceed 50 lines.
+Functions longer than 20 lines SHOULD be avoided and trigger a warning.
+
+##### Rule 9 — Parameter Passing
+
+All parameters MUST be passed by reference.
+
+##### Rule 10 — Variable Mutability
+
+All variables MUST be immutable by default, unless explicitly declared mutable.
 
 ### Certifying — the _Signature_
