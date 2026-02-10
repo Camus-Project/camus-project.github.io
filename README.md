@@ -55,8 +55,6 @@ Terms are _realized by_ components.
 Terms may include subterms, which are themselves terms.
 Each subterm is realized as a property of the realization of the term that contains it.
 
-Each component MUST realize explicitly a term in the lexicon.
-
 ### Understanding — the _Grammar_
 
 Grammar is a set of rules that the programmer, assumed to be an AI, MUST follow. These rules guarantee that the code is readable and understandable to a human reviewer.
@@ -73,7 +71,11 @@ Its job is to verify that the programmer respects the Grammar rules, and that an
 
 #### The Rules
 
-##### Rule 1
+##### Rule 1 — Term Definition
+
+Every term MUST be defined in the project lexicon.
+
+#### Rule 2 — Component Realization
 
 Each component MUST realize exactly one term, which MUST be explicitly declared.
 
