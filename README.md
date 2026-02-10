@@ -146,3 +146,37 @@ Exceptions can be declared at two levels:
 -->
 
 ### Certifying — the _Signature_
+
+Certification is the final requirement of the Camus Method.
+
+Before any signature:
+- the code MUST be passed through a formatter or linter to obtain a stable layout,
+- `kiss check` MUST be run to ensure compliance with the Grammar.
+
+The signature process is initiated with `kiss sign`, optionally scoped to a file or a specific function.
+
+Each function is examined individually.
+It is identified by a hash of its code, which guarantees its integrity over time.
+
+This hash is signed by a human reviewer using a private key.
+The associated public key allows verification of:
+- the signature,
+- the hash integrity,
+- the integrity of the signed function.
+
+By signing a function, the reviewer:
+- assumes responsibility for it,
+- guarantees that the function performs the action it claims to perform.
+
+If the hash of a function changes, its signature is invalidated.
+
+A reviewer may revoke trust explicitly:
+- `kiss revoke-key` revokes a private key and invalidates all functions signed with it,
+- `kiss revoke-function` invalidates a previously signed function.
+
+When a function is invalidated, all functions that depend on it are invalidated as well.
+Invalidation propagates transitively.
+
+Camus provides a command to evaluate certification coverage: `kiss coverage`
+
+From the Camus perspective, code is fit for distribution only when all code under Camus legislation is signed.
