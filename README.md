@@ -75,8 +75,12 @@ Its job is to verify that the programmer respects the Grammar rules, and that an
 
 Every term MUST be defined in the project lexicon.
 
-#### Rule 2 — Component Realization
+##### Rule 2 — Component Realization
 
 Each component MUST realize exactly one term, which MUST be explicitly declared.
+
+##### Rule 3 — Function Terms
+
+Every function MUST declare the terms it expects as parameters and the terms it returns.
 
 ### Certifying — the _Signature_
