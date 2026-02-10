@@ -39,7 +39,7 @@ So we need to master AI code. We must conceptualize with the AI, understand its 
 Camus requires some structural elements from the host programming language in order to operate:
 
 1. The ability to write comments, to host the Camus SL overlay.
-2. The ability to define classes, structures, or objects.
+2. The ability to define _components_, such as classes, structures, or objects.
 3. The ability to define functions.
 
 Most modern languages provide these three features.
@@ -50,12 +50,12 @@ The lexicon is the first requirement of the Camus Method.
 
 A lexicon is a finite, explicit set of _terms_ describing _what_ the software manipulates.
 Each term names a concept shared and understood by humans and AI.
-Terms are _realized by_ classes, objects or structures.
+Terms are _realized by_ components.
 
 Terms may include subterms, which are themselves terms.
 Each subterm is realized as a property of the realization of the term that contains it.
 
-Each object, class or structure MUST realize explicitly a term in the lexicon.
+Each component MUST realize explicitly a term in the lexicon.
 
 ### Understanding — the _Grammar_
 
