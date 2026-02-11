@@ -1,7 +1,7 @@
 # The Camus Project
 
-> Misnaming things adds to the world’s suffering.<br>
-> _Mal nommer un objet, c’est ajouter au malheur de ce monde._<br>
+> Misnaming things adds to the world’s suffering.  
+> _Mal nommer un objet, c’est ajouter au malheur de ce monde._ 
 > — Albert Camus, *Sur une philosophie de l’expression*, 1944.
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
@@ -138,8 +138,9 @@ Components communicate only through explicit terms and function claims.
 It is permissible to deviate from any previous rule or prohibition if and only if the deviation is explicitly documented.
 Exceptions can be declared at two levels:
 
-1. Project level – specify which rules or prohibitions are relaxed, whether violations generate warnings instead of errors, and define the scope (which folders/files Camus applies to or excludes).
-2. Function/Component level – mark a specific rule as exempted, either silently or with a warning for audit purposes.
+1. Host language level — Adapting `kiss` or developing tools to apply Camus to certain languages ​​may encounter difficulties in verifying some of the preceding rules to the point of abandoning them; in this case, these abandonments MUST be made explicit in any presentation of these tools.
+2. Project level – specify which rules or prohibitions are relaxed, whether violations generate warnings instead of errors, and define the scope (which folders/files Camus applies to or excludes).
+3. Function/Component level – mark a specific rule as exempted, either silently or with a warning for audit purposes.
 
 <!-- 15 rulez! Yeah!
 ![Moses/Mel Brook breaking one table of the Laws](https://i.makeagif.com/media/11-03-2015/cu9Q-o.gif)
