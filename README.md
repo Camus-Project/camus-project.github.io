@@ -181,3 +181,18 @@ Invalidation propagates transitively.
 Camus provides a command to evaluate certification coverage: `kiss coverage`
 
 From the Camus perspective, code is fit for distribution only when all code under Camus legislation is signed.
+
+## Applying the Camus Method
+
+The Camus project provides two languages for applying the method:  
+_Camus Specification Language_ (_Camus SL_) and _Camus Programming Language_ (_Camus PL_).
+
+They share a common syntactic core, the lexicon, `kiss`, and a working storage — as well as the methodological principles defined above.
+
+However, they serve different purposes and operate under different constraints.
+
+Camus SL is designed to be embedded into existing programming languages through structured comments.  
+It expresses the semantic constraints required by the method and allows controlled, explicit exceptions to its rules, enabling gradual adoption.
+
+Camus PL is a standalone programming language.  
+In Camus PL, methodological constraints are structural: they are enforced by the language itself and cannot be bypassed.
