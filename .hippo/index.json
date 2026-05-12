@@ -1,22 +1,5 @@
 {
   "version": 3,
-  "entries": {
-    "mem_deed5a339362": {
-      "id": "mem_deed5a339362",
-      "file": "episodic/mem_deed5a339362.md",
-      "layer": "episodic",
-      "strength": 1,
-      "tags": [
-        "error",
-        "git-learned",
-        "path:steph",
-        "path:camus",
-        "path:site"
-      ],
-      "created": "2026-04-27T20:40:10.868Z",
-      "last_retrieved": "2026-04-27T20:40:10.868Z",
-      "pinned": false
-    }
-  },
+  "entries": {},
   "last_retrieval_ids": []
 }

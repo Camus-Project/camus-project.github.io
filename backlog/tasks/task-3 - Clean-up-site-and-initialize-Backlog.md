@@ -1,9 +1,9 @@
 ---
 id: task-3
-title: Nettoyer site/
-status: To Do
+title: Clean up site/ and initialize Backlog
+status: Done
 assignee: []
-created_date: '2026-04-28 20:43'
+created_date: '2026-04-28 20:51'
 labels:
   - Phase-0
 dependencies: []
@@ -12,5 +12,5 @@ dependencies: []
 ## Description
 
 <!-- SECTION:DESCRIPTION:BEGIN -->
-Supprimer le dossier backlog/ de Site/
+Remove old backlog folder from Site/ and reinitialize Backlog
 <!-- SECTION:DESCRIPTION:END -->

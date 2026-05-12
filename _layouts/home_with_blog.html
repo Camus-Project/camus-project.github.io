@@ -1,0 +1,35 @@
+---
+layout: page
+---
+
+<blockquote>
+  <p>Misnaming things adds to the world’s suffering.<br>
+<em>Mal nommer un objet, c’est ajouter au malheur de ce monde.</em></p>
+
+  <p>— Albert Camus, <em>Sur une philosophie de l’expression</em>, 1944.</p>
+</blockquote>
+
+<div class="home">
+    {%- assign recent_posts_count = site.blog.recent_posts_count | default: 3
+    -%} {%- if site.posts.size > 0 -%}
+    <h2>Latest News</h2>
+
+    <ul class="post-list">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y"
+        -%} {%- for post in site.posts limit: recent_posts_count -%}
+        <li>
+            <span class="post-meta"
+                >{{ post.date | date: date_format }} -
+            </span>
+            <a href="{{ post.url | relative_url }}">
+                {{ post.title | escape }}
+            </a>
+        </li>
+        {%- endfor -%}
+    </ul>
+
+    <p class="more-posts">
+        <a href="{{ '/blog/' | relative_url }}">View all blog posts →</a>
+    </p>
+    {%- endif -%} {{ content }}
+</div>

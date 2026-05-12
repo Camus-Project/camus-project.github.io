@@ -1,199 +1,97 @@
-# The Camus Project
+# Camus Programming Language
+**Intention-driven programming language for AIs and humans**
 
-> Misnaming things adds to the world’s suffering.  
-> _Mal nommer un objet, c’est ajouter au malheur de ce monde._
->   
-> — Albert Camus, *Sur une philosophie de l’expression*, 1944.
+> Misname an object adds to the misfortune of this world.
+> 
+> Mal nommer un objet, c’est ajouter au malheur de ce monde.
+> 
+> — Albert Camus, *Sur une philosophie de l’expression*, 1944
 
 ![License: MIT](https://img.shields.io/badge/License-MIT-green)
 ![Status: Concept](https://img.shields.io/badge/Status-Early%20Concept-blue)
 
-## The AI Challenge
 
-Artificial intelligence is revolutionizing the Art of Code. Beyond obvious benefits, new challenges are emerging. The most pressing is _trust_. The Camus project aims to address it by providing the required tools.
+_Camus_ is a general purpose programming language designed to be **easily written by AIs** and  **easily understood by humans**. AIs write the code, but humans review, validate, and take **responsibility**. The compilation process is deterministic, producing executable programs for existing ecosystems.
 
-### The Problem of Trust
+## Philosophy
 
-Ultimately, trust is a human problem, not a technical one. And no human problem has a purely technical solution, but technology helps to find a human one.
+Camus is guided by a single principle: **every program is a deliberate act**.
 
-Trust rests on a promise made by humans. This promise binds them. This commitment is proven by signatures. Only then the technical aspect begins: it aims to guarantee the authenticity and persistence of these signatures. Because if the commitment is not honored, these signatures are used to demand redress, and this redress is refused if the signatures have not persisted until then or if their authenticity is not verified.
+Key ideas:
 
-AI cannot sign. Or only by delegation from humans, who assume responsibility for the signature and any potential redress. AI is not a subject of law. Whether it could one day become so is more than hypothetical and debatable, and falls outside the scope of the problems that the Camus project aims to solve.
+- **Easy to read and write for IAs**: Until now, programming languages ​​were designed to be written by humans and understood by machines; Camus reverses the paradigm: it is designed to be written by machines and understood by humans.
+- **Easy to read for humans**: Maybe boring, but clear; humans can then take responsibility.
+- **Intention first**: Every function, module, or block should have a clearly defined purpose; things are easier to understand when you know their reason for being.  
+- **Human responsibility**: AI may generate code, but humans are accountable for reviewing and approving it.  
+- **Transparent execution**: Compilation produces deterministic code; Camus’ compilation is deterministic; AI is only involved in generation, not execution.
+- **Traceable structure**: Programs are structured for readability, auditability, and accountability.
 
-Moreover, if AIs were to become responsible, they would have every interest in using our tools to supervise their irresponsible agents and prove their good faith.
+This is **an early-stage project**, exploring how programming can align human and AI collaboration with clarity and responsibility.
 
-### The Solution, Ultimately
+## Main goals
 
-Distributing software entails responsibility. This responsibility is only assumed if the code is _mastered_.
+### AI-friendly ergonomics
+Camus aims to be AI-friendly: its syntax should be flat, each block explicitly delimited, and code generable locally without relying on hidden context, limiting deep nesting or implicit scopes. These design choices are intended to minimize errors during AI generation and make each step understandable and auditable once implemented.
 
-The Camus project aims to produce the tools to measure this responsibility almost line by line. It involves _conceptualizing_ an entire project in the same terms as AI, _understanding_ the intent that each function claims to fulfill, and _certifying_ that the code it uses to do so actually achieves it.
+### Human auditability
+Camus aims to be auditable by humans: every function, step, and block should be understandable and explainable, so that a human reviewer can take full responsibility for the code. By design, the language should make implicit logic explicit and minimize constructs that could obscure intent.
 
-At the end of this process, each function is explicitly **signed by a human auditor**, who assumes responsibility for it. 
-Only then can the software be considered fit for distribution.
+### General-purpose and compilable
+Camus aims to be a general-purpose language capable of being compiled or transpiled into standard executable code across multiple environments. Its design should allow the underlying intentions to remain clear and auditable while supporting real execution.
 
-## The Camus Method
+## What Camus is not
+Camus is not intended to be a specification language, a domain-specific language, a natural language interface, or a replacement for existing task or requirements management tools. While it deals with the mapping between intentions and code, it does not aim to formalize human intentions outside the scope of generating auditable, executable code.
 
-So we need to master AI code. We must conceptualize with the AI, understand its code, and certify it. What tools are required to enable this ?
+## The Core Problem Camus Solves
+The core problem Camus aims to address is not generating code from intentions, but understanding what the generated code actually does. Code produced by AI can be correct yet difficult to audit, especially when languages allow implicit constructs or when the AI introduces unexpected behavior. Camus aims to minimize such complexity by ensuring that every function, step, and block is explainable and auditable, allowing human reviewers to fully grasp the effects of the code, and ensuring that every generated step reflects its intended purpose.
 
-### Requirements
+## Deep Motivations
 
-Camus requires some structural elements from the host programming language in order to operate:
+### The Fantasy of Cryptic AI Languages
 
-1. The ability to write comments, to host the Camus SL overlay.
-2. The ability to define _components_, such as classes, structures, or objects.
-3. The ability to define functions.
+[A recent experiment](https://github.com/ImJasonH/ImJasonH/blob/main/articles/llm-programming-language.md) attempted to have AI systems design a programming language optimized to minimize token consumption, deliberately setting aside readability concerns. The first attempt produced a cryptic language—but the AI proved unable to build a compiler for it. When another AI was consulted, it proposed a surprisingly *more readable* solution, leading the experimenter to realize that "optimized for AI" doesn't mean "incomprehensible to humans."
 
-Most modern languages provide these three features.
+This outcome contradicts predictions that AI systems might develop cryptic, human-incomprehensible programming languages. It reveals a fundamental truth: Large Language Models are models of *human language*, trained on human communication patterns. A programming language truly "optimized for AI" would be *more readable*, not less. LLMs perform better with explicit code, verbose documentation, and clear structure. The clarity that helps humans understand code is precisely what helps AI systems process it effectively.
 
-### Conceptualizing — the _Lexicon_
+### The Token Density Fallacy
 
-The lexicon is the first requirement of the Camus Method.
+The idea of creating dense, compressed languages to save tokens is counterproductive. Reducing verbosity diminishes clarity, which increases misunderstandings and errors. This, in turn, generates costly back-and-forth corrections that far exceed any initial token savings. As developers have noted, [code that is "boring to read"](https://randuck.dev/blog/embracing-boring-code) may be a quality, not a flaw—predictability means no surprises, and no surprises means no unpleasant surprises.
 
-A lexicon is a finite, explicit set of _terms_ describing _what_ the software manipulates.
-Each term names a concept shared and understood by humans and AI.
-Terms are _realized by_ components.
+### The Responsibility Problem
 
-Terms may include subterms, which are themselves terms.
-Each subterm is realized as a property of the realization of the term that contains it.
+The core challenge with AI-generated code is not cost or performance—it's **accountability**. When we delegate decisions to AI, who bears responsibility for the outcomes? The developer who chose convenience? The AI designer who didn't provide adequate decision-making capabilities? Chance itself? The AI?
 
-### Understanding — the _Grammar_
+Responsibility isn't merely about credit or blame—it's about who faces concrete consequences when things go wrong: who repairs, compensates, pays, or faces legal sanctions. It makes no sense to fine or imprison an AI system.
 
-Grammar is a set of rules that the programmer, assumed to be an AI, MUST follow. These rules guarantee that the code is readable and understandable to a human reviewer.
+### The Asimov Principle
 
-It ensures that manipulations of terms are explicit, auditable, and predictable.
+Isaac Asimov found stories about robot uprisings absurd. His reasoning, [articulated through his Three Laws of Robotics](https://en.wikipedia.org/wiki/Three_Laws_of_Robotics#History), was simple: when we design tools, we build in safeguards against injury. While accidents happen, the notion that we'd march toward universal catastrophe due to a design flaw is fundamentally illogical.
 
-#### `kiss` as the Grammar Gardian
+This principle applies to AI code generation. We must design systems that prevent self-harm by design, not hope to retrofit safety after the fact.
 
-Ensuring respect for Grammar is the primary role of `kiss`, Camus' companion tool.
+### Auditability as the Solution
 
-`kiss check` must be run before human review **and** compilation.
+For a human to legitimately assume responsibility for AI-generated code, they must be able to audit it thoroughly. This requires the code to be perfectly readable and the AI's reasoning to be transparent.
 
-Its job is to verify that the programmer respects the Grammar rules, and that any exception to a rule is already **known, documented and intentional**.
+This paradigm shift is the only viable path to solving the accountability problem: **require AI systems to explain their reasoning before entrusting them with significant decisions**. Since the internal workings of modern AI have become opaque to us, we must mandate external explicability as a prerequisite for delegation.
 
-#### The Rules
+### The Camus Approach
 
-##### Rule 1 — Term Definition
+This project embodies these principles: creating a framework where AI-generated code must be auditable and accompanied by clear explanations of architectural decisions and reasoning. The human review occurs after code generation and validation (compilation, testing), but before final compilation and production deployment. The human developer audits both the code and its rationale, assumes responsibility for the choices, and the resulting code becomes code that is truly *owned* rather than merely *accepted*.
 
-Every term MUST be defined in the project lexicon.
+This is not about limiting AI capability—it's about structuring human-AI collaboration so that responsibility remains where it must: with humans who can be accountable for consequences.
 
-##### Rule 2 — Component Realization
+## Roadmap
 
-Each component MUST realize exactly one term, which MUST be explicitly declared.
+- [ ] Define syntax and core abstractions  
+- [ ] Define formal model for intention and responsibility  
+- [ ] Explore transcompilation to existing languages  
+- [ ] Gradually prototype execution and validation tools  
 
-##### Rule 3 — Function Terms
+## Join the Discussion
 
-Every function MUST declare the terms it expects as parameters and the terms it returns.
+Camus is open to [**discussion, feedback, and gradual exploration**](https://github.com/taophp/Camus/discussions).
 
-##### Rule 4 — Function Claim
+## License
 
-Every function MUST declare its claim.
-
-##### Rule 5 — Function Constraints
-
-A function MAY declare constraints on the terms it receives and returns. These constraints MUST be explicit and verifiable.
-
-##### Rule 6 — Block Depth
-
-Functions MUST limit block depth to one level. Nested blocks are forbidden.
-
-##### Rule 7 — Line Length
-
-Lines MUST not exceed 120 characters.
-Lines longer than 80 characters SHOULD be avoided and trigger a warning.
-
-##### Rule 8 — Function Length
-
-Functions MUST not exceed 50 lines.
-Functions longer than 20 lines SHOULD be avoided and trigger a warning.
-
-##### Rule 9 — Parameter Passing
-
-All parameters MUST be passed by reference.
-
-##### Rule 10 — Variable Mutability
-
-All variables MUST be immutable by default, unless explicitly declared mutable.
-
-##### Rule 11 — No Public Primitives
-
-Primitives MUST NOT be exposed as public variables or returned by functions.
-Only components that realize explicitly declared terms can be used publicly.
-
-##### Rule 12 — No Anonymous Functions
-
-Anonymous functions (lambdas, closures without names) are FORBIDDEN.
-Every function must have a unique, explicit name to ensure auditability and traceability.
-
-##### Rule 13 — No Inheritance
-
-Inheritance is FORBIDDEN.
-Composition MUST be favored to combine behaviors and functionalities.
-
-##### Rule 14 — No Interfaces
-
-Interfaces are FORBIDDEN.
-Components communicate only through explicit terms and function claims.
-
-##### Rule 15 — Explicit Exceptions
-
-It is permissible to deviate from any previous rule or prohibition if and only if the deviation is explicitly documented.
-Exceptions can be declared at two levels:
-
-1. Host language level — Adapting `kiss` or developing tools to apply Camus to certain languages ​​may encounter difficulties in verifying some of the preceding rules to the point of abandoning them; in this case, these abandonments MUST be made explicit in any presentation of these tools.
-2. Project level – specify which rules or prohibitions are relaxed, whether violations generate warnings instead of errors, and define the scope (which folders/files Camus applies to or excludes).
-3. Function/Component level – mark a specific rule as exempted, either silently or with a warning for audit purposes.
-
-<!-- 15 rulez! Yeah!
-![Moses/Mel Brook breaking one table of the Laws](https://i.makeagif.com/media/11-03-2015/cu9Q-o.gif)
--->
-
-### Certifying — the _Signature_
-
-Certification is the final requirement of the Camus Method.
-
-Before any signature:
-- the code MUST be passed through a formatter or linter to obtain a stable layout,
-- `kiss check` MUST be run to ensure compliance with the Grammar.
-
-The signature process is initiated with `kiss sign`, optionally scoped to a file or a specific function.
-
-Each function is examined individually.
-It is identified by a hash of its code, which guarantees its integrity over time.
-
-This hash is signed by a human reviewer using a private key.
-The associated public key allows verification of:
-- the signature,
-- the hash integrity,
-- the integrity of the signed function.
-
-By signing a function, the reviewer:
-- assumes responsibility for it,
-- guarantees that the function performs the action it claims to perform.
-
-If the hash of a function changes, its signature is invalidated.
-
-A reviewer may revoke trust explicitly:
-- `kiss revoke-key` revokes a private key and invalidates all functions signed with it,
-- `kiss revoke-function` invalidates a previously signed function.
-
-When a function is invalidated, all functions that depend on it are invalidated as well.
-Invalidation propagates transitively.
-
-Camus provides a command to evaluate certification coverage: `kiss coverage`
-
-From the Camus perspective, code is fit for distribution only when all code under Camus legislation is signed.
-
-## Applying the Camus Method
-
-The Camus project provides two languages for applying the method:  
-_Camus Specification Language_ (_Camus SL_) and _Camus Programming Language_ (_Camus PL_).
-
-They share a common syntactic core, the lexicon, `kiss`, and a working storage — as well as the methodological principles defined above.
-
-However, they serve different purposes and operate under different constraints.
-
-Camus SL is designed to be embedded into existing programming languages through structured comments.  
-It expresses the semantic constraints required by the method and allows controlled, explicit exceptions to its rules, enabling gradual adoption.
-
-Camus PL is a standalone programming language.  
-In Camus PL, methodological constraints are structural: they are enforced by the language itself and cannot be bypassed.
+This project is licensed under the **MIT License** – see [LICENSE](LICENSE) for details.
