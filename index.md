@@ -1,5 +1,5 @@
 ---
-title: Camus
+title: The Camus Project
 layout: home_with_blog
 ---
 
