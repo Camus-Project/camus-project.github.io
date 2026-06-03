@@ -18,13 +18,13 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: The Camus Project
+title: Camus
 email: mail@stephanemourey.fr
-description: "Method, SL, and companion tools for AI-assumed software"
+description: "Intention driven language"
 baseurl: "/" # the subpath of your site, e.g. /blog
-url: "https://camus-project.github.io" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://camus-project.github.io/" # the base hostname & protocol for your site, e.g. http://example.com
 #twitter_username: jekyllrb
-github_username: Camus-Project
+github_username: l4nj1n9
 remote_theme: "jekyll/minima@1e8a445"
 plugins:
   - jekyll-remote-theme
