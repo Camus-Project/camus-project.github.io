@@ -7,3 +7,12 @@ The Camus Project is an open initiative building a unified method, specification
 ## License
 
 MIT — see [LICENSE](LICENSE).
+
+---
+<pre>
+*camus-sig-1*
+**Signed — Lan Jing**
+Date: 2026-06-04T20:54:31Z
+Fingerprint: SHA256:11:0E:1B:6E:21:89:66:AF:F0:BF:CD:A5:A8:4D:7E:01:63:82:29:B3:08:6B:70:3F:52:D6:F3:21:23:52:CE:7F
+Signature: fuwsO28xH2ovMh282YvrMUw7aXMDbaAI7l+otiplJDVHT/ZH/OrJCSGTPud6AeDMRIP2PjVA0LWq4CNWqocsBQ==
+</pre>
