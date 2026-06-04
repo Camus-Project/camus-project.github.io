@@ -50,3 +50,10 @@ The project is structured around several components at different stages of devel
 
 - [Blog](/blog/) — development journal, announcements, and technical deep dives
 - [Community](https://github.com/Camus-Project/Camus-Programming-Language/discussions) — discussions, feedback, and exchange around the project
+
+---
+*camus-sig-1*
+**Signed — Lan Jing**
+Date: 2026-06-04T13:40:55Z
+Fingerprint: SHA256:11:0E:1B:6E:21:89:66:AF:F0:BF:CD:A5:A8:4D:7E:01:63:82:29:B3:08:6B:70:3F:52:D6:F3:21:23:52:CE:7F
+Signature: SPaGRoVViSPtATy2iSwQ07zvZefRWGiJJTi9qCza8C0TK4uO3oFwXuZcGb8WRzHklH2Iq/t4qSu1c2wAVyHFCQ==
