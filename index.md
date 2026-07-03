@@ -34,17 +34,18 @@ The project is structured around several components at different stages of devel
 
 ### Available
 
+- [kiss.sh](https://github.com/Camus-Project/kiss.sh) — compliance checking, signing, and verification tool for Camus.sh scripts (RC1)
 - [Camus Skill](https://github.com/Camus-Project/camus-skill) — an embeddable agent skill that brings the method and SL into AI-assisted coding workflows
 
-### Work in progress
+### Documentation
 
-- [The Camus Method](https://github.com/Camus-Project/The-Camus-Method) — a framework for certifying AI-generated code through explicit intent, traceability, and human verification
-- [Camus Specification Language](https://github.com/Camus-Project/Camus-Specification-Language) — an embeddable specification language for expressing semantic contracts inside existing programming languages
+- [The Camus Method](The-Camus-Method/) — a framework for certifying AI-generated code through explicit intent, traceability, and human verification
+- [Camus Specification Language](Camus-SL/) — an embeddable specification language for expressing semantic contracts inside existing programming languages
+- [Camus.sh](adaptations/Camus.sh/) — the shell scripting adaptation of the Camus Method
 
 ### Future
 
 - [Camus Programming Language](https://github.com/Camus-Project/Camus-Programming-Language) — a programming language that enforces methodological constraints at the language level
-- **kiss** — a companion tool for validation, coverage measurement, and certification
 
 ## Resources
 

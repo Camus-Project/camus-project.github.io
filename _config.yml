@@ -18,7 +18,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Camus
+title: The Camus Project
 email: mail@stephanemourey.fr
 description: "Intention driven language"
 baseurl: "/" # the subpath of your site, e.g. /blog
@@ -39,6 +39,12 @@ minima:
   hide_site_feed_link: false # Enable feed link in footer
   skin: auto
   nav_pages:
+    - url: "/The-Camus-Method/"
+      title: "Method"
+    - url: "/Camus-SL/"
+      title: "SL"
+    - url: "/adaptations/Camus.sh/"
+      title: "Camus.sh"
     - url: "/blog/"
       title: "Blog"
     - url: "https://github.com/orgs/Camus-Project/discussions"
