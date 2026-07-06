@@ -106,7 +106,7 @@
     tocLinks.forEach((link) => {
       link.addEventListener("click", function (e) {
         e.preventDefault();
-        const target = document.querySelector("#"+this.getAttribute("id"));
+        const target = document.querySelector(this.getAttribute("href"));
         if (target) {
           isScrolling = true;
 
@@ -120,7 +120,7 @@
           });
 
           // Update URL
-          history.pushState(null, null, "#"+this.getAttribute("id"));
+          history.pushState(null, null, this.getAttribute("href"));
 
           // Reset scrolling flag after animation
           setTimeout(() => {
