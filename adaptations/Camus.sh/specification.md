@@ -5,7 +5,7 @@ title: Camus.sh Specification
 
 # Camus.sh Specification v1 (Draft)
 
-## 1. Purpose
+## Purpose
 
 Camus.sh defines a restricted shell scripting profile intended for human-reviewed and human-assumed software artifacts
 — typically produced by AI and, eventually, by humans. The profile applies the Camus Method to shell scripts.
@@ -28,7 +28,7 @@ signing of Camus.sh artifacts.
 
 ---
 
-## 2. Shell Compatibility
+## Shell Compatibility
 
 Camus.sh is developed and tested with **Bash**.
 
@@ -49,7 +49,7 @@ The following shells are NOT compatible:
 
 ---
 
-## 3. Source Encoding
+## Source Encoding
 
 A script MUST:
 
@@ -58,7 +58,7 @@ A script MUST:
 
 ---
 
-## 4. Function Declaration
+## Function Declaration
 
 Functions MUST be declared using the following syntax:
 
@@ -80,7 +80,7 @@ This restriction ensures uniform parsing across supported shells.
 
 ---
 
-## 5. Executable Code
+## Executable Code
 
 Executable statements MUST NOT appear at top level.
 
@@ -115,7 +115,7 @@ echo "Hello"
 
 ---
 
-## 6. Entry Point
+## Entry Point
 
 Every Camus.sh script MUST define a function named:
 
@@ -133,7 +133,7 @@ No executable statements may appear after this invocation.
 
 ---
 
-## 7. Camus Blocks
+## Camus Blocks
 
 Camus.sh uses delimiter-marked blocks for structured metadata.
 
@@ -150,7 +150,7 @@ Content inside a block uses shell comments (`# key: value`).
 | `## CAMUS-SL` | Before a function definition | Declares intent, inputs, outputs |
 | `## CAMUS-SIGNATURE` | After a function body | Cryptographic attestation |
 
-### 7.1 CAMUS-LEXICON
+### CAMUS-LEXICON
 
 Placed at the top of a script (after shebang) to declare project terms.
 If the script belongs to a larger project with a LEXICON.md, this block
@@ -162,7 +162,7 @@ MAY be omitted.
 ## CAMUS-END
 ```
 
-### 7.2 CAMUS-SL
+### CAMUS-SL
 
 Placed immediately before a function definition.
 Keys MUST be in lowercase. Sub-entries are indented (tooling MUST preserve
@@ -175,7 +175,7 @@ The following keys are defined:
 - `output:` — OPTIONAL. Present only if the function produces output.
 - `return[N]{code,desc}:` — OPTIONAL. Present only if the function returns non-zero
   exit codes. Uses TOON table format. The `code` field MUST be the name of a
-  named constant (see §11). The `code` field MAY be `*` to indicate that
+  named constant (see [Error Code Constants](#error-code-constants)). The `code` field MAY be `*` to indicate that
   the return code originates from a called function and is propagated forward.
 
 Example with inputs and outputs:
@@ -223,7 +223,7 @@ prompt_password_twice() {
 }
 ```
 
-### 7.3 CAMUS-SIGNATURE
+### CAMUS-SIGNATURE
 
 Placed immediately after the closing `}` of a function.
 
@@ -251,15 +251,15 @@ Keys MUST be in lowercase.
 
 ---
 
-## 8. Size Limits
+## Size Limits
 
-### 8.1 Functions
+### Functions
 
 Functions MUST NOT exceed 50 lines.
 
 Functions SHOULD NOT exceed 20 lines.
 
-### 8.2 Line Length
+### Line Length
 
 Lines MUST NOT exceed 120 characters.
 
@@ -267,7 +267,7 @@ Lines SHOULD NOT exceed 80 characters.
 
 ---
 
-## 9. Signature Scope
+## Signature Scope
 
 Camus.sh v1 defines functions as the primary review and attestation unit.
 
@@ -282,29 +282,29 @@ defeats the human accountability that signatures are meant to
 provide. Passwordless keys are valid for local testing only.
 
 This specification defines the structure of signature blocks
-(see §7.3). Automated verification and key management are
-delegated to kiss.sh (see §10).
+(see [CAMUS-SIGNATURE](#camus-signature)). Automated verification and key management are
+delegated to kiss.sh (see [Relation to the Camus Method](#relation-to-the-camus-method)).
 
 ---
 
-## 10. Relation to the Camus Method
+## Relation to the Camus Method
 
 Camus.sh applies the Camus Method to shell scripting. The table below
 maps the 15 Grammar rules defined by the Method to this specification.
 
 | # | Rule | Status | Notes |
 |---|---|---|---|
-| 1 | Term Definition | Applicable | Via `## CAMUS-LEXICON` block (§7.1) |
-| 2 | Component Realization | Applicable | Each function realizes a term, declared via `## CAMUS-SL` (§7.2) |
-| 3 | Function Terms | Applicable | Input and output terms declared in `## CAMUS-SL` (§7.2) |
-| 4 | Function Claim | Applicable | Declared via `intent:` in `## CAMUS-SL` (§7.2) |
-| 5 | Function Constraints | Applicable | Declared via `input:` in `## CAMUS-SL` (§7.2) |
+| 1 | Term Definition | Applicable | Via `## CAMUS-LEXICON` block ([CAMUS-LEXICON](#camus-lexicon)) |
+| 2 | Component Realization | Applicable | Each function realizes a term, declared via `## CAMUS-SL` ([CAMUS-SL](#camus-sl)) |
+| 3 | Function Terms | Applicable | Input and output terms declared in `## CAMUS-SL` ([CAMUS-SL](#camus-sl)) |
+| 4 | Function Claim | Applicable | Declared via `intent:` in `## CAMUS-SL` ([CAMUS-SL](#camus-sl)) |
+| 5 | Function Constraints | Applicable | Declared via `input:` in `## CAMUS-SL` ([CAMUS-SL](#camus-sl)) |
 | 6 | Block Depth | Applicable | Shell structure prevents nested function definitions |
-| 7 | Line Length | Applicable | See §8 (Line Length) |
-| 8 | Function Length | Applicable | See §8 |
+| 7 | Line Length | Applicable | See [Size Limits](#size-limits) |
+| 8 | Function Length | Applicable | See [Size Limits](#size-limits) |
 | 9 | Parameter Passing | Not applicable | Shell uses positional parameters; pass-by-reference is a language-level concept |
 | 10 | Variable Mutability | Partial | `local` and `readonly` recommended but not enforced by spec v1 |
-| 11 | No Public Primitives | Applicable | §5 prohibits top-level executable statements |
+| 11 | No Public Primitives | Applicable | [Executable Code](#executable-code) prohibits top-level executable statements |
 | 12 | No Anonymous Functions | Not applicable | Shell has no anonymous function syntax |
 | 13 | No Inheritance | Not applicable | Shell has no inheritance mechanism |
 | 14 | No Interfaces | Not applicable | Shell has no interface mechanism |
@@ -315,13 +315,13 @@ its first prototype — will automate compliance checking against these rules.
 
 ---
 
-## 11. Error Code Constants
+## Error Code Constants
 
 All return and exit codes in Camus.sh scripts MUST use named `readonly`
 constants instead of bare numeric values. This convention makes error
 semantics self-documenting and enables systematic auditing.
 
-### 11.1 Range Convention
+### Range Convention
 
 | Range | Prefix | Category | Description |
 |---|---|---|---|
@@ -331,14 +331,14 @@ semantics self-documenting and enables systematic auditing.
 
 Code 0 is reserved for success and is bound to the constant `I_OK`.
 
-### 11.2 Rules
+### Rules
 
 1. Every `return N` or `exit N` with `N > 0` MUST reference a named constant.
 2. Constants MUST be declared at the top of the script, after the
    `## CAMUS-LEXICON` block, using `readonly`.
 3. Constants within a range MUST be assigned sequentially without gaps.
 4. The `readonly` declaration is considered a declaration (not executable
-   code) and is therefore exempt from the top-level code prohibition (§5).
+   code) and is therefore exempt from the top-level code prohibition ([Executable Code](#executable-code)).
 5. In CAMUS-SL `return[N]{code,desc}:` blocks, the `code` field MUST use
    the constant name (without `$` prefix). Example:
    `E_FILE_NOT_FOUND,file not found`.
@@ -346,7 +346,7 @@ Code 0 is reserved for success and is bound to the constant `I_OK`.
    the wildcard code `*` in the CAMUS-SL block:
    `*,propagated from <function>`.
 
-### 11.3 Implementation Pattern
+### Implementation Pattern
 
 ```sh
 # --- Error code constants ---
@@ -368,7 +368,7 @@ readonly E_UNREACHABLE=127
 
 ---
 
-## 12. Design Rationale
+## Design Rationale
 
 Camus.sh treats functions as units of human responsibility.
 
