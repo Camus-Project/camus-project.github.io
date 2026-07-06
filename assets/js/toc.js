@@ -83,7 +83,7 @@
         tocHTML += "</li>";
       }
 
-      tocHTML += `<li><a href="#${id}" data-header-index="${originalIndex}">${text}</a>`;
+      tocHTML += `<li><a id="${id}" href="#${id}" data-header-index="${originalIndex}">${text}</a>`;
       currentLevel = level;
     });
 
@@ -106,7 +106,7 @@
     tocLinks.forEach((link) => {
       link.addEventListener("click", function (e) {
         e.preventDefault();
-        const target = document.querySelector(this.getAttribute("href"));
+        const target = document.querySelector("#"+this.getAttribute("id"));
         if (target) {
           isScrolling = true;
 
@@ -120,7 +120,7 @@
           });
 
           // Update URL
-          history.pushState(null, null, this.getAttribute("href"));
+          history.pushState(null, null, "#"+this.getAttribute("id"));
 
           // Reset scrolling flag after animation
           setTimeout(() => {
