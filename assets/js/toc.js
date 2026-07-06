@@ -83,7 +83,7 @@
         tocHTML += "</li>";
       }
 
-      tocHTML += `<li><a id="${id}" href="#${id}" data-header-index="${originalIndex}">${text}</a>`;
+      tocHTML += `<li><a href="#${id}" data-header-index="${originalIndex}">${text}</a>`;
       currentLevel = level;
     });
 
