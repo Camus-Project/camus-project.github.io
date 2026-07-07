@@ -120,8 +120,10 @@ assert_file_exists() {
 ## CAMUS-END
 ```
 
-### A `kiss sign` session
+### Two `kiss sign` sessions
 
+
+#### Copied/pasted from terminal
 ```bash
 $ ./kiss.sh sign kiss.sh
 Signatory name: Lan Jing
@@ -149,6 +151,10 @@ Skipping (already signed by Lan Jing): assert_file_exists in kiss.sh
 Signed function(s) in kiss.sh
 No signable files found.
 ```
+
+#### A animated Gif
+
+![Camus sign session](/img/term1.gif)
 
 ## Status
 
