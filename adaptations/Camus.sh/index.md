@@ -152,7 +152,7 @@ Signed function(s) in kiss.sh
 No signable files found.
 ```
 
-#### A animated Gif
+#### Animated Gif
 
 ![Camus sign session](/img/term1.gif)
 
@@ -163,3 +163,12 @@ Camus.sh is an experimental implementation of the Camus Method.
 Its purpose is to validate the methodology in practice, refine the first experimental form of Camus SL, and establish the foundations for Camus.rs and future adaptations of the Camus Method.
 
 Discussion and feedback are welcome via the project's issue tracker.
+
+---
+<pre>
+*camus-sig-1*
+**Signed -- Lan Jing**
+Date: 2026-07-07T14:13:52Z
+Fingerprint: SHA256:52:69:05:07:66:BD:DE:55:C7:D2:B1:52:9C:8F:ED:7B:05:E3:8E:57:7E:10:98:1E:7C:BD:13:96:85:4E:83:89
+Signature: jb/8z+WvtRQuKx2kfOBiAi5lT+mSUOOPXzKVSQd1wSGIEZejwqYeYeqIY9nzgP2SIbbL8SI18hWLxit7+XWcAw==
+</pre>
