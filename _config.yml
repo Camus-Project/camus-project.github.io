@@ -45,6 +45,8 @@ minima:
       title: "SL"
     - url: "/adaptations/Camus.sh/"
       title: "Camus.sh"
+    - url: "/adaptations/Camus.rs/"
+      title: "Camus.rs"
     - url: "/blog/"
       title: "Blog"
     - url: "https://github.com/orgs/Camus-Project/discussions"
