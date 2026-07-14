@@ -54,6 +54,8 @@ It is embedded inside host languages via structured comments and defines:
 3. Explicit **claims** about behavior
 4. Optional **constraints**
 5. Controlled, documented **exceptions**
+6. **Semantic contracts** between terms and implementations
+7. **Signed function protection** against unauthorized modification
 
 Camus SL does not execute.
 It does not compile.
@@ -126,6 +128,56 @@ Transparency is mandatory.
 
 ---
 
+### 5. Semantic Contracts
+
+Terms define **actions** — expected behaviors.
+
+A function's SL declares:
+
+* The actions it **expects** from its parameters
+* The actions it **provides** in return
+
+A term without actions is an empty concept.
+A term with actions is a contract.
+
+Semantic continuity follows this path:
+
+> intent → action → term → implementation
+
+This means:
+
+* The **intent** of a function determines which **actions** it needs
+* Each **action** is defined in the Lexicon as part of a **term**
+* Each **term** is realized by a **component** in the host language
+* The component's implementation must fulfill the actions it declares
+
+Traits (interfaces) are compatible with Camus only if they carry explicit semantic contracts. A trait without semantic contract is prohibited.
+
+---
+
+## Grammar Rules
+
+The following 15 rules define how code MUST be written under Camus SL.
+Every rule may be excepted, but exceptions MUST be documented (see Exceptions below).
+
+1. **Term Definition** — Every term MUST be defined in the project Lexicon
+2. **Component Realization** — Each component MUST realize exactly one term, explicitly declared
+3. **Function Terms** — Every function MUST declare its input and output terms
+4. **Function Claim** — Every function MUST declare what it does (its claim)
+5. **Function Constraints** — Declare explicit, verifiable constraints on parameters
+6. **Block Depth** — Functions MUST limit block depth to one level (no nested blocks)
+7. **Line Length** — Lines MUST not exceed 120 characters (warn above 80)
+8. **Function Length** — Functions MUST not exceed 50 lines (warn above 20)
+9. **Parameter Passing** — All parameters MUST be passed by reference
+10. **Variable Mutability** — Variables MUST be immutable by default
+11. **No Public Primitives** — Never expose primitives as public variables or return values
+12. **No Anonymous Functions** — Every function must have an explicit name
+13. **No Inheritance** — Favor composition over inheritance
+14. **No Interfaces without Contracts** — Components communicate through explicit terms only; traits without semantic contracts are prohibited
+15. **Explicit Exceptions** — Deviations are allowed only if explicitly documented with why, how, and risks
+
+---
+
 ## What Camus SL Is Not
 
 Camus SL is not:
@@ -158,6 +210,46 @@ But certification is meaningful only if:
 * Its structure is limited and readable
 
 Camus SL structures this process so that responsibility is not symbolic, but traceable.
+
+---
+
+## Signed Function Protection
+
+Once a function is signed, the AI may not modify it without explicit developer approval.
+
+No workarounds are permitted:
+
+* Renaming a function to create a new version while abandoning the old one is prohibited
+* Refactoring remains an objective to limit code drift
+* The developer's signature is a commitment that must not be circumvented
+
+If a signed function needs modification, the AI must:
+
+1. Identify the function and its current signature
+2. Explain why the modification is needed
+3. Request explicit approval from the developer
+4. Only proceed after approval is received
+
+---
+
+## Exceptions
+
+Any Camus rule may be excepted.
+
+Documentation is mandatory in the SL block:
+
+* **Why**: the reason for the exception
+* **How**: the implementation approach
+* **Risks**: what the exception implies
+
+Workflow:
+
+1. AI identifies need for exception
+2. AI requests human approval
+3. Human approves or rejects
+4. Only after approval: implementation
+
+Presenting a fait accompli at review time is forbidden.
 
 ---
 
