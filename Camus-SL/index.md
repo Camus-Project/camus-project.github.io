@@ -3,6 +3,8 @@ layout: page
 title: Camus Specification Language
 ---
 
+> For the concrete, host-language-agnostic block syntax (`CAMUS-LEXICON`, `CAMUS-SL`, `CAMUS-SIGNATURE`), see the [Camus SL Syntax Specification](syntax).
+
 Camus SL is an **embeddable specification language** designed to make AI-generated code auditable, constrained, and certifiable by a human reviewer.
 
 It is not a new programming language.
@@ -79,6 +81,9 @@ Terms are realized by components in the host language.
 Without a lexicon, there is no shared vocabulary between human and AI.
 With a lexicon, ambiguity shrinks.
 
+See the [Syntax Specification](syntax#lexicon-format) for the concrete
+`term { definition, realizedBy, subterm, action }` declaration format.
+
 ---
 
 ### 2. Function Claims
@@ -109,6 +114,9 @@ Constraints must be:
 
 No hidden assumptions.
 
+See the [Syntax Specification](syntax#constraint-grammar) for the concrete,
+deliberately minimal constraint expression grammar.
+
 ---
 
 ### 4. Structured Exceptions
@@ -125,6 +133,9 @@ Any deviation from rules must be:
 
 Silence is forbidden.
 Transparency is mandatory.
+
+See the [Syntax Specification](syntax#structured-exceptions) for the concrete
+`rule` / `why` / `how` / `risks` declaration format.
 
 ---
 
