@@ -3,7 +3,7 @@ layout: page_with_toc
 title: Camus.rs Specification
 ---
 
-# Camus.rs Specification v0.1.0 (Draft)
+# Camus.rs Specification v0.1.1 (Draft)
 
 ## Purpose
 
@@ -22,6 +22,39 @@ The profile provides a uniform structure that enables:
 Camus.rs is intentionally more restrictive than the underlying Rust language it supports.
 
 **cargo-kiss** is the Rust adaptation of the **kiss** companion tool. It automates compliance checking, block validation, and cryptographic signing of Camus.rs artifacts.
+
+---
+
+## Relation to Camus SL Syntax Specification
+
+Camus.rs implements the generic [Camus SL Syntax Specification](/Camus-SL/syntax). Block
+delimiters, the `realizedBy` lexicon key, the `constraint:` grammar, and the core
+`## camus-signature` fields (`signatory`, `date`, `fingerprint`, `signature`) follow that
+specification exactly.
+
+Two Rust-specific specializations remain, both intentional and stricter than the generic
+specification:
+
+| Aspect | Camus SL Syntax Specification (generic) | Camus.rs |
+|---|---|---|
+| Lexicon location | Dedicated file recommended; inline `CAMUS-LEXICON` shorthand allowed for small/standalone scripts | `camus/LEXICON.md` only, no inline form ([Camus Directory](#camus-directory)) |
+| `actions:` | Optional | REQUIRED on every `## camus-sl` block ([CAMUS-SL](#camus-sl)) |
+
+**Why stricter:**
+
+- **Lexicon location** — the inline shorthand targets small, standalone scripts (e.g. Bash).
+  A Cargo project always has a natural place for a dedicated file; allowing an inline form
+  would fragment the vocabulary across source files without a compensating benefit.
+- **`actions:` required** — Camus.rs's [Semantic Contracts](#semantic-contracts) model ties
+  trait compatibility directly to declared actions; making the key optional would silently
+  weaken that guarantee.
+
+Camus.rs also defines one additional key not present in the generic specification:
+
+- `errors:` — OPTIONAL, Rust-specific. Named error conditions using Rust error enums (see
+  [CAMUS-SL](#camus-sl) and [Error Handling](#error-handling)). Permitted under the generic
+  specification's allowance for host adaptations to add further keys for host-specific
+  reporting needs.
 
 ---
 
@@ -81,7 +114,7 @@ Content inside a block uses standard key-value pairs.
 
 | Block | Placement | Purpose |
 |---|---|---|
-| `## camus-sl` | Before a function/item | Declares intent, terms, actions, inputs, outputs, errors |
+| `## camus-sl` | Before a function/item | Declares intent, terms, actions, inputs, outputs, constraints, errors |
 | `## camus-signature` | After a signed item | Cryptographic attestation |
 
 ### CAMUS-SL
@@ -97,6 +130,9 @@ The following keys are defined:
 - `actions:` — REQUIRED. Semantic actions declared by this function (provided or expected).
 - `input:` — OPTIONAL. Terms consumed as parameters.
 - `output:` — OPTIONAL. Terms produced as return values.
+- `constraint:` — OPTIONAL, repeatable. Explicit, checkable condition on the terms received or
+  produced, using the constraint grammar defined in the
+  [Camus SL Syntax Specification](/Camus-SL/syntax#constraint-grammar).
 - `errors:` — OPTIONAL. Named error conditions (using Rust error enums).
 
 Example:
@@ -108,17 +144,19 @@ Example:
 /// actions: provides addition
 /// input: Integer (augend), Integer (addend)
 /// output: Integer (sum)
+/// constraint: augend >= 0 and addend >= 0
 /// errors: none
-/// ## camus-signature
-/// author: reviewer-identifier
-/// date: 2026-07-14T12:00:00Z
-/// version: 0.1.0
-/// hash: sha256:abcdef1234567890
-/// key_id: key-identifier
 /// ## camus-end
 fn add(augend: &Integer, addend: &Integer) -> Integer {
     augend + addend
 }
+/// ## camus-signature
+/// signatory: reviewer-identifier
+/// date: 2026-07-14T12:00:00Z
+/// fingerprint: sha256:<hex>
+/// signature: <base64-encoded Ed25519 signature>
+/// version: 0.1.0
+/// ## camus-end
 ```
 
 ### CAMUS-SIGNATURE
@@ -138,14 +176,28 @@ A passwordless key MAY be used temporarily for local testing.
 
 Keys MUST be in lowercase.
 
+Core fields, aligned with the generic [Camus SL Syntax Specification](/Camus-SL/syntax#certification-camus-signature):
+
+- `signatory:` — REQUIRED. Identifies the human certifier.
+- `date:` — REQUIRED. ISO 8601 timestamp of certification.
+- `fingerprint:` — REQUIRED. Fingerprint of the signing key.
+- `signature:` — REQUIRED. Base64-encoded Ed25519 signature.
+
+Camus.rs additionally allows the following documented fields, appended after the core fields:
+
+- `version:` — OPTIONAL. Crate/semver version at signing time.
+- `key_id:` — OPTIONAL. Short local identifier for the signing key, when referencing the full
+  fingerprint is impractical.
+
 ```rust
 /// ## camus-signature
-/// author: <identifier>
+/// signatory: <identifier>
 /// date: <iso 8601>
+/// fingerprint: sha256:<hex>
+/// signature: <base64>
 /// version: <semver>
-/// hash: sha256:<hex>
 /// key_id: <identifier>
-/// ## camus-signature
+/// ## camus-end
 ```
 
 ---
@@ -165,9 +217,9 @@ Format:
 ```markdown
 ## Term: <TermName>
 
-- **Definition**: Clear description of the concept
-- **Realized by**: ComponentName
-- **Actions**:
+- **definition**: Clear description of the concept
+- **realizedBy**: ComponentName
+- **actions**:
   - <action-name>: <semantic description>
 ```
 
@@ -176,13 +228,19 @@ Example:
 ```markdown
 ## Term: Session
 
-- **Definition**: An authenticated connection between client and server
-- **Realized by**: SessionManager
-- **Actions**:
+- **definition**: An authenticated connection between client and server
+- **realizedBy**: SessionManager
+- **actions**:
   - authenticate: validate credentials and establish session
   - refresh: extend session lifetime
   - revoke: terminate session
 ```
+
+The `realizedBy` key name is shared with the generic
+[Camus SL Syntax Specification](/Camus-SL/syntax#lexicon-format); Camus.rs keeps its
+Markdown bullet-list layout for `camus/LEXICON.md` rather than the brace-delimited
+`term { ... }` form, since that layout question is separate from key naming and is not
+part of this reconciliation.
 
 Without a Lexicon, there is no shared vocabulary between human and AI.
 With a Lexicon, ambiguity shrinks.
@@ -232,7 +290,7 @@ Error semantics are expressed through enum variants and their names.
 
 ## Signature Scope
 
-Camus.rs v0.1.0 defines functions as the primary review and attestation unit.
+Camus.rs v0.1.1 defines functions as the primary review and attestation unit.
 
 All functions MUST be signed, regardless of visibility:
 
@@ -329,7 +387,7 @@ maps the 15 Grammar rules defined by the Method to this specification.
 | 2 | Component Realization | Applicable | Each component realizes a term, declared in Lexicon |
 | 3 | Function Terms | Applicable | Terms and actions declared in `## camus-sl` ([CAMUS-SL](#camus-sl)) |
 | 4 | Function Claim | Applicable | Declared via `intent:` in `## camus-sl` ([CAMUS-SL](#camus-sl)) |
-| 5 | Function Constraints | Applicable | Declared via `terms:` and `actions:` in `## camus-sl` ([CAMUS-SL](#camus-sl)) |
+| 5 | Function Constraints | Applicable | Declared via the `constraint:` key in `## camus-sl`, using the Camus SL constraint grammar ([CAMUS-SL](#camus-sl)) |
 | 6 | Block Depth | Applicable | Enforced by Rust's syntax (no nested function definitions) |
 | 7 | Line Length | Applicable | See [Size Limits](#size-limits) |
 | 8 | Function Length | Applicable | See [Size Limits](#size-limits) |

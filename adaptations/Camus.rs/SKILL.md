@@ -34,9 +34,9 @@ Create `camus/LEXICON.md`:
 # Project Lexicon
 
 ## Term: [TermName]
-- **Definition**: Clear description of the concept
-- **Realized by**: ComponentName
-- **Actions**:
+- **definition**: Clear description of the concept
+- **realizedBy**: ComponentName
+- **actions**:
   - <action-name>: <semantic description>
 ```
 
@@ -109,6 +109,7 @@ Keys (lowercase):
 - `actions:` — REQUIRED. Semantic actions declared.
 - `input:` — OPTIONAL. Terms consumed.
 - `output:` — OPTIONAL. Terms produced.
+- `constraint:` — OPTIONAL, repeatable. Explicit, checkable condition (see the Camus SL constraint grammar).
 - `errors:` — OPTIONAL. Named error conditions.
 - `exceptions:` — OPTIONAL. Documented rule exceptions.
 
@@ -121,7 +122,9 @@ Example:
 /// actions: provides addition
 /// input: Integer (augend), Integer (addend)
 /// output: Integer (sum)
+/// constraint: augend >= 0 and addend >= 0
 /// errors: none
+/// ## camus-end
 fn add(augend: &Integer, addend: &Integer) -> Integer {
     augend + addend
 }
@@ -133,11 +136,12 @@ Placed after a signed item, inside doc comments.
 
 Keys (lowercase):
 
-- `author:` — identifier of the signer
-- `date:` — ISO 8601 timestamp
-- `version:` — semantic version
-- `hash:` — sha256 fingerprint
-- `key_id:` — signing key identifier
+- `signatory:` — REQUIRED. Identifier of the signer
+- `date:` — REQUIRED. ISO 8601 timestamp
+- `fingerprint:` — REQUIRED. Fingerprint of the signing key
+- `signature:` — REQUIRED. Base64-encoded Ed25519 signature
+- `version:` — OPTIONAL. Crate/semver version at signing time
+- `key_id:` — OPTIONAL. Short local identifier for the signing key
 
 **Only a human MAY sign.** AI-generated signatures are invalid.
 **Private key MUST be password-protected.**
@@ -229,12 +233,13 @@ When the code passes Grammar review:
 
 ```rust
 /// ## camus-signature
-/// author: <identifier>
+/// signatory: <identifier>
 /// date: <iso 8601>
+/// fingerprint: sha256:<hex>
+/// signature: <base64>
 /// version: <semver>
-/// hash: sha256:<hex>
 /// key_id: <identifier>
-/// ## camus-signature
+/// ## camus-end
 ```
 
 Only the human operator appends this block. By signing, they
@@ -264,6 +269,7 @@ explicit developer approval.
 /// actions: <semantic actions declared>
 /// input: <terms consumed>
 /// output: <terms produced>
+/// constraint: <optional, repeatable checkable condition>
 /// errors: <named error conditions>
 /// ## camus-end
 fn function_name(param: &InputType) -> Result<OutputType, ErrorType> {
@@ -280,6 +286,7 @@ fn function_name(param: &InputType) -> Result<OutputType, ErrorType> {
 /// actions: <semantic actions declared>
 /// input: <terms consumed>
 /// output: <terms produced>
+/// constraint: <optional, repeatable checkable condition>
 /// errors: <named error conditions>
 /// ## camus-end
 ```
@@ -288,12 +295,13 @@ fn function_name(param: &InputType) -> Result<OutputType, ErrorType> {
 
 ```rust
 /// ## camus-signature
-/// author: <identifier>
+/// signatory: <identifier>
 /// date: <iso 8601>
+/// fingerprint: sha256:<hex>
+/// signature: <base64>
 /// version: <semver>
-/// hash: sha256:<hex>
 /// key_id: <identifier>
-/// ## camus-signature
+/// ## camus-end
 ```
 
 ### Review Checklist

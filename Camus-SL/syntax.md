@@ -401,17 +401,20 @@ languages. This section records known points of alignment and divergence.
 | Aspect | Camus.sh | Camus.rs | This specification |
 |---|---|---|---|
 | Block delimiters | `## CAMUS-*` / `## CAMUS-END` | `/// ## camus-*` / `/// ## camus-end` | `CAMUS-*` / `CAMUS-END`, leader adapted per host |
-| Lexicon location | Inline `CAMUS-LEXICON` or project `LEXICON.md` | `camus/LEXICON.md` only | Dedicated file recommended; inline shorthand allowed |
-| Lexicon term-to-component key | Not formalized (prose) | `- **Realized by**: ComponentName` | `realizedBy: <qualified-component-name>` |
+| Lexicon location | Inline `CAMUS-LEXICON` or project `LEXICON.md` | `camus/LEXICON.md` only (intentional, stricter — see [Camus.rs specification](/adaptations/Camus.rs/specification#relation-to-camus-sl-syntax-specification)) | Dedicated file recommended; inline shorthand allowed |
+| Lexicon term-to-component key | Not formalized (prose) | `realizedBy:` (aligned) | `realizedBy: <qualified-component-name>` |
 | Claim key | `intent:` | `intent:` | `intent` |
-| Constraint declaration | Folded into `input:` descriptions | Not formalized | Explicit `constraint:` key with defined grammar |
-| Signature fields | `signatory`, `date`, `fingerprint`, `signature` | `author`, `date`, `version`, `hash`, `key_id` | Core: `signatory`, `date`, `fingerprint`, `signature`; extra fields allowed |
+| Constraint declaration | Folded into `input:` descriptions | Explicit `constraint:` key (aligned) | Explicit `constraint:` key with defined grammar |
+| `actions:` | Not formalized | REQUIRED (intentional, stricter — see [Camus.rs specification](/adaptations/Camus.rs/specification#relation-to-camus-sl-syntax-specification)) | Optional |
+| Signature fields | `signatory`, `date`, `fingerprint`, `signature` | `signatory`, `date`, `fingerprint`, `signature` (aligned); `version`, `key_id` kept as additional documented fields | Core: `signatory`, `date`, `fingerprint`, `signature`; extra fields allowed |
 
-The `realizedBy` key and the explicit `constraint` grammar are new in this
-specification. Reconciling `Camus.rs`'s `- **Realized by**:` prose label and
-`author`/`hash`/`version` signature field names with the generalized keys
-above is **tentative** and out of scope for this document; it requires a
-dedicated, separately approved task against the Camus.rs specification.
+The `realizedBy` key and the explicit `constraint` grammar, introduced in this
+specification, have been reconciled into Camus.rs. The `- **Realized by**:` prose
+label and the `author`/`hash`/`version`/`key_id` signature field names formerly
+used by Camus.rs have been retired in favor of the generalized keys above; see
+the Camus.rs [Relation to Camus SL Syntax Specification](/adaptations/Camus.rs/specification#relation-to-camus-sl-syntax-specification)
+section for the two remaining, intentional Rust-specific specializations
+(lexicon location and required `actions:`) and their rationale.
 
 ---
 
