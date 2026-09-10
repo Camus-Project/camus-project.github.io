@@ -182,7 +182,7 @@ Every rule may be excepted, but exceptions MUST be documented (see Exceptions be
 9. **Parameter Passing** — All parameters MUST be passed by reference
 10. **Variable Mutability** — Variables MUST be immutable by default
 11. **No Public Primitives** — Never expose primitives as public variables or return values
-12. **No Anonymous Functions** — Every function must have an explicit name
+12. **Anonymous Functions Permitted** — Closures/lambdas are allowed; Rules 6-8 (block depth, line length, function length) are what keep them auditable, not a ban on anonymity itself
 13. **No Inheritance** — Favor composition over inheritance
 14. **No Interfaces without Contracts** — Components communicate through explicit terms only; traits without semantic contracts are prohibited
 15. **Explicit Exceptions** — Deviations are allowed only if explicitly documented with why, how, and risks

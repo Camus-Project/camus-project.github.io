@@ -70,7 +70,7 @@ rules, derived from the specification.
 ### Prohibition Rules
 
 11. **No Public Primitives** — Never expose primitives as public variables or return values
-12. **No Anonymous Functions** — Closures are prohibited; every function must have an explicit name
+12. **Anonymous Functions Permitted** — Closures are allowed; Rules 6-8 (block depth/line length/function length) are what keep them auditable
 13. **No Inheritance** — Favor composition over inheritance (Rust has no inheritance)
 14. **No Interfaces without Contracts** — Traits MUST carry explicit semantic contracts
 15. **Explicit Exceptions** — Deviations documented with why/how/risks
@@ -188,7 +188,7 @@ For each function, verify:
 - Declare actions (provided/expected) for each function
 - Keep functions small and focused on a single term
 - Use `Result<T, E>` for error handling
-- Reject closures; use named functions instead
+- Closures are permitted, but prefer a named function when a closure would be stored, returned, or passed as a named parameter of the function's own signature
 
 ### When Reviewing Code
 
@@ -315,7 +315,6 @@ fn function_name(param: &InputType) -> Result<OutputType, ErrorType> {
 - [ ] No line exceeds 120 characters
 - [ ] Variables immutable by default
 - [ ] Parameters passed by reference where possible
-- [ ] No closures used
 - [ ] Traits carry semantic contracts
 - [ ] Exceptions documented with why/how/risks
 - [ ] **No AI-generated `## camus-signature` blocks** — only human signatures

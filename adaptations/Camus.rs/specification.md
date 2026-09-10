@@ -316,17 +316,22 @@ delegated to cargo-kiss.
 
 ## Closures
 
-Closures are **prohibited** in Camus.rs code.
+Closures are **permitted** in Camus.rs code.
 
-Rationale: AI-generated code must prioritize readability. Closures are not truly named functions. Every code unit must have an explicit name to be auditable and certifiable.
-
-This applies to:
+Rule 12 of the Camus Method no longer bans anonymous functions outright:
+the complexity limits already enforced elsewhere in the Grammar (Rule 6
+Block Depth, Rule 7 Line Length, Rule 8 Function Length) are what keep a
+closure auditable, not a requirement that every code unit have its own
+name. This applies to:
 
 - `|x| x + 1` syntax
 - `Fn`, `FnMut`, `FnOnce` trait bounds in function signatures
 - Closure parameters in function definitions
 
-Exception via rule 15 with documented justification.
+A closure passed directly to a well-known standard-library combinator
+(e.g. `.map()`, `.filter()`, `.and_then()`) and never stored, returned, or
+passed as a named parameter of a Camus.rs function's own signature is the
+prototypical readable case this rule change was made for.
 
 ---
 
@@ -394,7 +399,7 @@ maps the 15 Grammar rules defined by the Method to this specification.
 | 9 | Parameter Passing | Applicable | Pass by reference (`&T`) where possible; ownership rules apply |
 | 10 | Variable Mutability | Applicable | Immutable by default; `mut` keyword required for mutation |
 | 11 | No Public Primitives | Applicable | No public primitive fields or return types without wrapper types |
-| 12 | No Anonymous Functions | Applicable | Closures prohibited ([Closures](#closures)); every function named |
+| 12 | Anonymous Functions Permitted | Applicable | Closures allowed within the existing complexity limits ([Closures](#closures)) |
 | 13 | No Inheritance | Applicable | Rust has no inheritance; composition via traits and enums |
 | 14 | No Interfaces without Contracts | Applicable | Traits require semantic contracts ([Semantic Contracts](#semantic-contracts)) |
 | 15 | Explicit Exceptions | Applicable | Deviations documented in `## camus-sl` with why/how/risks |
@@ -428,7 +433,7 @@ Exception documentation in the SL block:
 /// terms: [terms]
 /// actions: [actions]
 /// exceptions:
-///   rule: 12 (No Anonymous Functions)
+///   rule: 11 (No Public Primitives)
 ///   why: [reason for exception]
 ///   how: [implementation approach]
 ///   risks: [what this implies]
