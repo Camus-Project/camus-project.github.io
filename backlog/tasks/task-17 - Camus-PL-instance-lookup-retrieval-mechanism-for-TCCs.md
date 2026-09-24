@@ -1,10 +1,10 @@
 ---
 id: task-17
 title: 'Camus PL: instance lookup/retrieval mechanism for TCCs'
-status: In Progress
+status: Done
 assignee: []
 created_date: '2026-09-24 20:26'
-updated_date: '2026-09-24 20:55'
+updated_date: '2026-09-24 21:02'
 labels:
   - camus-pl
 dependencies: []
@@ -22,6 +22,12 @@ Deliverable: design decision and grammar/checker integration, or explicit deferr
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 Lookup/retrieval mechanism designed for TCCs to obtain existing instances
-- [ ] #2 Integrated into grammar/checker, or explicitly deferred with rationale
+- [x] #1 Lookup/retrieval mechanism designed for TCCs to obtain existing instances
+- [x] #2 Integrated into grammar/checker, or explicitly deferred with rationale
 <!-- AC:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+Design decision (2026-09-24): lookup is a shared LCR function returning the record type, e.g. TaskStore.find(uuidv7: id) -> Task, composed by the TCC as ctx.get(TaskStore) + let mut task: Task = store.find(id) + mut self method call. Contract carried by a law (ensures: result.id == id). No new grammar: reuses call/return/let-mut forms. Checker integration: fixed check_call_args which counted the implicit self parameter of methods and made mut self methods uncallable; fixtures (good/retrieve_and_mutate.cam, bad/method_arity.cam) + 2 tests; sample project gained TaskStore.find and Cli.update. Documented in ARCHITECTURE.md section 11 and grammar.ebnf. Out of scope (runtime/backend): physical fetch, not-found policy, mut-receiver enforcement -> task-15.
+<!-- SECTION:NOTES:END -->
