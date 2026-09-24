@@ -1,11 +1,11 @@
 ---
 id: TASK-12
 title: Write a minimal EBNF grammar for Camus PL
-status: To Do
+status: Done
 assignee:
   - '@ai-agent'
 created_date: '2026-09-10 21:31'
-updated_date: '2026-09-11 11:54'
+updated_date: '2026-09-24 20:25'
 labels: []
 dependencies: []
 ---
@@ -41,10 +41,19 @@ Not a request to build a compiler or interpreter -- a written, checkable grammar
 
 ## Acceptance Criteria
 <!-- AC:BEGIN -->
-- [ ] #1 A written EBNF (or equivalent) grammar file exists for Camus PL, covering struct/role, the two-level declaration pattern, function declarations (visibility, intention, constraints, mut), struct fields (incl. mut), imports, and the constraint-predicate syntax
-- [ ] #2 The grammar encodes canonical form: exactly one textual representation per program (single-space tokens, 2-space indent, no trailing whitespace, alphabetical imports, fixed section order), so formatting changes cannot invalidate a signature hash
-- [ ] #3 The grammar covers let + explicit types (no inference), copy (expression and parameter), and the async API: later (bound only), when (both branches, ignore allowed), wait (named handle), ignore (fire-and-forget)
-- [ ] #4 A comment syntax (# full-line) is defined and covered by the grammar
-- [ ] #5 The grammar is checked by hand against all three sample-project files (Task.cam, TaskStore.cam, Cli.cam); any mismatch found is fixed or explicitly flagged, not silently ignored
-- [ ] #6 ctx configuration is explicitly left out of scope, not guessed at
+- [x] #1 A written EBNF (or equivalent) grammar file exists for Camus PL, covering struct/role, the two-level declaration pattern, function declarations (visibility, intention, constraints, mut), struct fields (incl. mut), imports, and the constraint-predicate syntax
+- [x] #2 The grammar encodes canonical form: exactly one textual representation per program (single-space tokens, 2-space indent, no trailing whitespace, alphabetical imports, fixed section order), so formatting changes cannot invalidate a signature hash
+- [x] #3 The grammar covers let + explicit types (no inference), copy (expression and parameter), and the async API: later (bound only), when (both branches, ignore allowed), wait (named handle), ignore (fire-and-forget)
+- [x] #4 A comment syntax (# full-line) is defined and covered by the grammar
+- [x] #5 The grammar is checked by hand against all three sample-project files (Task.cam, TaskStore.cam, Cli.cam); any mismatch found is fixed or explicitly flagged, not silently ignored
+- [x] #6 ctx configuration is explicitly left out of scope, not guessed at
 <!-- AC:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+grammar.ebnf reached v0.4 (2026-09-23), covering struct/role, two-level declarations, functions (visibility, intention, laws), fields (incl. mut), imports, constraint-predicate syntax (now law clauses), let/copy/async/operators/full-line comments.
+Validated by the checker (camuspl check) against all three sample-project files (Task.cam, TaskStore.cam, Cli.cam) — passes.
+ctx configuration remained out of scope (own task created).
+Ticket: 01233cdb41 (closed).
+<!-- SECTION:NOTES:END -->
