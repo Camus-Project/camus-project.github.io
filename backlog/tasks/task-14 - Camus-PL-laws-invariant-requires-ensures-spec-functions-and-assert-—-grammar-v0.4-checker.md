@@ -1,12 +1,12 @@
 ---
-id: task-14
+id: TASK-14
 title: >-
   Camus PL: laws (invariant/requires/ensures), spec functions and assert —
   grammar v0.4 + checker
 status: Done
 assignee: []
 created_date: '2026-09-24 19:29'
-updated_date: '2026-09-24 20:18'
+updated_date: '2026-09-25 11:33'
 labels:
   - camus-pl
 dependencies: []
@@ -40,4 +40,6 @@ Implemented and committed (fossil session update 2026-09-23 23:30).
 - 14 integration tests green; sample-project migrated (Task.cam) and passes camuspl check.
 - ARCHITECTURE.md updated incl. Verus backend mapping.
 Ticket: 32b10dfb1b (closed).
+
+Fossil: 14e0628c0a
 <!-- SECTION:NOTES:END -->

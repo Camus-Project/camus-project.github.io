@@ -5,7 +5,7 @@ status: Done
 assignee:
   - '@ai-agent'
 created_date: '2026-09-10 21:31'
-updated_date: '2026-09-24 20:25'
+updated_date: '2026-09-25 11:33'
 labels: []
 dependencies: []
 ---
@@ -56,4 +56,6 @@ grammar.ebnf reached v0.4 (2026-09-23), covering struct/role, two-level declarat
 Validated by the checker (camuspl check) against all three sample-project files (Task.cam, TaskStore.cam, Cli.cam) — passes.
 ctx configuration remained out of scope (own task created).
 Ticket: 01233cdb41 (closed).
+
+Fossil: 14e0628c0a
 <!-- SECTION:NOTES:END -->
