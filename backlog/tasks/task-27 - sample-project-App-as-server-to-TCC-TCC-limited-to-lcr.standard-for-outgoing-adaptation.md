@@ -1,5 +1,5 @@
 ---
-id: TASK-27
+id: task-27
 title: >-
   sample-project: App as server to TCC, TCC limited to lcr.standard for outgoing
   adaptation
@@ -9,8 +9,8 @@ created_date: '2026-09-29 11:05'
 updated_date: '2026-09-29 15:37'
 labels: []
 dependencies:
-  - TASK-30
-  - TASK-32
+  - task-30
+  - task-32
 ---
 
 ## Description

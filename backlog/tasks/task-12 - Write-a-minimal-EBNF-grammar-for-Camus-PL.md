@@ -1,5 +1,5 @@
 ---
-id: TASK-12
+id: task-12
 title: Write a minimal EBNF grammar for Camus PL
 status: Done
 assignee:

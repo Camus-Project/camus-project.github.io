@@ -1,5 +1,5 @@
 ---
-id: TASK-23
+id: task-23
 title: >-
   Dogfood: sign generated Rust with cargo-kiss and feed lessons back to
   SL/method
@@ -9,7 +9,7 @@ created_date: '2026-09-25 11:55'
 labels:
   - camus-pl
 dependencies:
-  - TASK-22
+  - task-22
 ---
 
 ## Description

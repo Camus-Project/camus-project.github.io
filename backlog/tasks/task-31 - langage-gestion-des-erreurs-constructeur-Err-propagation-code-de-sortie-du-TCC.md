@@ -1,5 +1,5 @@
 ---
-id: TASK-31
+id: task-31
 title: >-
   langage: gestion des erreurs - constructeur Err, propagation, code de sortie
   du TCC
@@ -10,8 +10,8 @@ updated_date: '2026-09-29 15:37'
 labels:
   - camus-pl
 dependencies:
-  - TASK-30
-  - TASK-33
+  - task-30
+  - task-33
 ---
 
 ## Description

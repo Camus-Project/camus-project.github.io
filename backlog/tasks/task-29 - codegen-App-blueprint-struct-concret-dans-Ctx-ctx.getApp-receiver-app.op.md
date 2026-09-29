@@ -1,5 +1,5 @@
 ---
-id: TASK-29
+id: task-29
 title: >-
   codegen: App blueprint - struct concret dans Ctx, ctx.get(App), receiver
   app.op
@@ -11,7 +11,7 @@ labels:
   - camus-pl
   - camus-pl-codegen
 dependencies:
-  - TASK-28
+  - task-28
 ---
 
 ## Description

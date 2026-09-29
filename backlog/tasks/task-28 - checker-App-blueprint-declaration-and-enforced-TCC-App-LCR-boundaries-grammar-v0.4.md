@@ -1,5 +1,5 @@
 ---
-id: TASK-28
+id: task-28
 title: >-
   checker: App blueprint declaration and enforced TCC/App/LCR boundaries
   (grammar v0.4+)
@@ -9,7 +9,7 @@ created_date: '2026-09-29 11:09'
 labels:
   - camus-pl
 dependencies:
-  - TASK-14
+  - task-14
 ---
 
 ## Description

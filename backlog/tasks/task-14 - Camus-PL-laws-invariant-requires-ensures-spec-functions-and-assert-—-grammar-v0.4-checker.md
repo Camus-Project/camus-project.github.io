@@ -1,5 +1,5 @@
 ---
-id: TASK-14
+id: task-14
 title: >-
   Camus PL: laws (invariant/requires/ensures), spec functions and assert —
   grammar v0.4 + checker

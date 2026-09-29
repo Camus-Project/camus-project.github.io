@@ -1,5 +1,5 @@
 ---
-id: TASK-30
+id: task-30
 title: 'langage: Result generique (Result<T>) + when sur valeur Result'
 status: Done
 assignee: []

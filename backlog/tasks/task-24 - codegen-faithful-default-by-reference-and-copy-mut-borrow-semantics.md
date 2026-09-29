@@ -1,5 +1,5 @@
 ---
-id: TASK-24
+id: task-24
 title: 'codegen: faithful default-by-reference and copy/mut borrow semantics'
 status: To Do
 assignee: []
@@ -7,7 +7,7 @@ created_date: '2026-09-25 13:17'
 labels:
   - camus-pl
 dependencies:
-  - TASK-18
+  - task-18
 ---
 
 ## Description

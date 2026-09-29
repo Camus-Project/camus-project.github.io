@@ -1,5 +1,5 @@
 ---
-id: TASK-33
+id: task-33
 title: >-
   langage: match et when comme deux formes d un seul mecanisme de pattern
   matching
@@ -10,8 +10,8 @@ updated_date: '2026-09-29 19:46'
 labels:
   - camus-pl
 dependencies:
-  - TASK-30
-  - TASK-32
+  - task-30
+  - task-32
 ---
 
 ## Description

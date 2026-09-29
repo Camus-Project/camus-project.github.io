@@ -1,5 +1,5 @@
 ---
-id: TASK-32
+id: task-32
 title: 'langage: statement if (else obligatoire) + discipline d initialisation'
 status: Done
 assignee: []

@@ -1,5 +1,5 @@
 ---
-id: TASK-4
+id: task-4
 title: Define Camus SL concrete syntax
 status: Done
 assignee: []

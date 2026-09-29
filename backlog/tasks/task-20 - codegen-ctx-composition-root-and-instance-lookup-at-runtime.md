@@ -1,5 +1,5 @@
 ---
-id: TASK-20
+id: task-20
 title: 'codegen: ctx composition root and instance lookup at runtime'
 status: Done
 assignee: []
@@ -8,7 +8,7 @@ updated_date: '2026-09-28 16:03'
 labels:
   - camus-pl
 dependencies:
-  - TASK-19
+  - task-19
 ---
 
 ## Description

@@ -1,5 +1,5 @@
 ---
-id: TASK-26
+id: task-26
 title: 'codegen: canonical LCR addressing and well-known reconfigurable lcr.standard'
 status: To Do
 assignee: []

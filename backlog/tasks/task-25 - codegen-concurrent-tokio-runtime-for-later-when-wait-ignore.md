@@ -1,5 +1,5 @@
 ---
-id: TASK-25
+id: task-25
 title: 'codegen: concurrent tokio runtime for later/when/wait/ignore'
 status: Done
 assignee: []
@@ -8,7 +8,7 @@ updated_date: '2026-09-29 20:42'
 labels:
   - camus-pl
 dependencies:
-  - TASK-21
+  - task-21
 ---
 
 ## Description

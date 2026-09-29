@@ -1,5 +1,5 @@
 ---
-id: TASK-16
+id: task-16
 title: 'Camus PL: ctx configuration format and dependency resolution'
 status: Done
 assignee: []

@@ -1,5 +1,5 @@
 ---
-id: TASK-19
+id: task-19
 title: 'codegen: TCC entry points and LCR in-memory adapters'
 status: Done
 assignee: []
@@ -8,7 +8,7 @@ updated_date: '2026-09-28 16:00'
 labels:
   - camus-pl
 dependencies:
-  - TASK-18
+  - task-18
 ---
 
 ## Description
