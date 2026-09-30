@@ -4,6 +4,7 @@ title: 'langage: when peut-il remplacer if (une ou deux constructions de branche
 status: To Do
 assignee: []
 created_date: '2026-09-30 20:52'
+updated_date: '2026-09-30 21:38'
 labels:
   - camus-pl
 dependencies:
@@ -71,4 +72,8 @@ Fossil: 78688008d6451c725c431205690a07524550b80e
 - [ ] #3 les formes des deux constructions sont unifiees si on garde les deux (indentation, discipline d initialisation, noms de branches)
 - [ ] #4 la question du sucre de comparaison de seuils (>1/<1) est tranchee: besoin reel ou artefact
 - [ ] #5 si la decision change le langage: grammar.ebnf bumpe et ARCHITECTURE.md mis a jour
+
+- [ ] #6 livrable 1: sort de if tranche, avec grammaire des etiquettes de branche et sort du controle d exhaustivite
+- [ ] #7 livrable 2: preuve ou contre-exemple du caractere observable ou non du choix async/sync par le transpiler
+- [ ] #8 livrable 3: tension async universelle vs purete des lois tranchee, en ecrivant ce qui cede
 <!-- AC:END -->
