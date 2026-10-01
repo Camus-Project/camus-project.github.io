@@ -4,7 +4,7 @@ title: 'langage: when peut-il remplacer if (une ou deux constructions de branche
 status: To Do
 assignee: []
 created_date: '2026-09-30 20:52'
-updated_date: '2026-09-30 21:38'
+updated_date: '2026-10-01 20:34'
 labels:
   - camus-pl
 dependencies:
@@ -77,3 +77,27 @@ Fossil: 78688008d6451c725c431205690a07524550b80e
 - [ ] #7 livrable 2: preuve ou contre-exemple du caractere observable ou non du choix async/sync par le transpiler
 - [ ] #8 livrable 3: tension async universelle vs purete des lois tranchee, en ecrivant ce qui cede
 <!-- AC:END -->
+
+## Implementation Notes
+
+<!-- SECTION:NOTES:BEGIN -->
+2026-10-01 — C2 résout la question when/if; trois clarifications de l auteur.
+
+La question de cette tâche (une ou deux constructions de branchement) est
+résolue par C2 de la note de synthèse v1.1: `when` et `after` sont deux formes
+d un seul mécanisme de matching, ne différant que par le moment d exécution et
+le lowering. `if` disparaît. Une condition booléenne devient `let cond = ...`
+puis `after cond` avec les branches `true` / `false`.
+
+Consigné dans le ticket 78688008, section 12:
+- C1 — le différé est à la demande [DÉCIDÉ]: on ne diffère un appel que si un
+  consommateur `when` existe. C est le signal qui rend un appel différable.
+- C7 — l approche d annotation (rendu annoté du compilateur) est rejetée,
+  l observabilité doit être repensée [OUVERT].
+- Le runtime camus_runtime doit être réécrit pour appliquer la nouvelle
+  grammaire (JoinSet + différé à la demande).
+
+La note v1.1 a été examinée et sa base factuelle vérifiée contre le code:
+exacte. Elle devient le référentiel de design pour l évolution v1.1. Les
+tâches d implémentation sont créées dans l ordre de bataille.
+<!-- SECTION:NOTES:END -->
