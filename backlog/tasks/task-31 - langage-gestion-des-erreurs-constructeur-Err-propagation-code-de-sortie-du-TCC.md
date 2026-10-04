@@ -1,56 +1,18 @@
 ---
-id: task-31
+id: TASK-31
 title: >-
   langage: gestion des erreurs - constructeur Err, propagation, code de sortie
   du TCC
 status: To Do
 assignee: []
 created_date: '2026-09-29 12:34'
-updated_date: '2026-09-30 14:19'
+updated_date: '2026-10-02 13:31'
 labels:
   - camus-pl
 dependencies:
   - task-30
   - task-33
   - task-35
----
-
-## Description
-
-<!-- SECTION:DESCRIPTION:BEGIN -->
----
-id: task-31
-title: >-
-  langage: gestion des erreurs - constructeur Err, propagation, code de sortie
-  du TCC
-status: To Do
-assignee: []
-created_date: '2026-09-29 12:34'
-updated_date: '2026-09-30 08:45'
-labels:
-  - camus-pl
-dependencies:
-  - task-30
-  - task-33
----
-
-## Description
-
-<!-- SECTION:DESCRIPTION:BEGIN -->
----
-id: task-31
-title: >-
-  langage: gestion des erreurs - constructeur Err, propagation, code de sortie
-  du TCC
-status: To Do
-assignee: []
-created_date: '2026-09-29 12:34'
-updated_date: '2026-09-30 08:41'
-labels:
-  - camus-pl
-dependencies:
-  - task-30
-  - task-33
 ---
 
 ## Description
@@ -223,4 +185,10 @@ Etat de fin de session: 6/15. Ce qui est livre: F5 (exit + regle checker), la de
 Ce qui bloque le reste, et qui est etabli plutot que suppose: AC4, AC5, AC6, AC7 et AC9 dependent du constructeur Err et de Result<T,E>, absents. AC8 (E2E) depend de la meme chose: le chemin d echec est IMPRODUCTIBLE tant que rien ne produit Err, ce que TASK-27 AC6 consigne en detail.
 AC2 (propagateur) et AC13 (erreur metier vs erreur technique) sont des questions de design qui attendent le decideur, et ne dependent d aucune ecriture de code.
 Consequence a assumer: un Result ne peut aujourd hui pas etre construit en echec hors des adaptateurs generes, qui font toujours Ok.
+
+REPARATION 2026-10-02, frontmatter duplique dans la Description. Cette tache avait sa section Description encadree par TROIS marqueurs SECTION:DESCRIPTION:BEGIN pour un seul END, et deux copies completes du frontmatter (id, title, status, dependencies) imbriquees avant le vrai texte. Consequence concrete et non cosmétique: backlog task view 31 présentait le YAML de la tache comme Description, et la description reelle (decisions A3/D/F, obstacle enums, P2, exhaustivite) ne commençait qu a la ligne 59 du fichier. C est le shifted content signale par la session du 2026-10-01, isole a cette tache: les 43 autres ont un seul marqueur BEGIN et un seul id. Repare via backlog task edit 31 --description, avec le texte extrait des lignes 59 a 193 du fichier corrompu. Verifie: un seul BEGIN et un seul END, description identique octet pour octet a l extrait, 15 criteres d acceptation intacts, notes intactes.
+
+CASSURE DU CHAMP id, CONSTATEE ET NON CORRIGEE. Ce fichier porte desormais un id en majuscules alors que les 43 autres portent un id en minuscules. Ce n est pas une regression de la reparation mais une revelation: task_prefix ne gouverne QUE le nom de fichier, et la casse du champ id est ecrite par le CLI selon l option employee. L option --description ecrit une forme majuscule, les autres operations ecritent une forme minuscule. La casse n est donc pas stable sous les editions CLI, et la forcer a la main serait a la fois interdit (edition directe interdite) et futile (l edition suivante la relancerait). Consequence: aucune. La resolution est verifiee dans les deux sens: backlog task view 31 trouve la tache et resout ses dependances task-30, task-33 et task-35. A ne pas remettre en cause sans corriger d abord le CLI.
+
+RESIDU DOCUMENTAIRE. Les references en majuscules qui subsistent dans les corps de tache ne sont pas des identifiants resolus, seulement de la prose. En revanche la revision Fossil 31a88c64 affirme que les 44 fichiers portent un id en minuscules, ce qui est devenu faux pour ce fichier. La correction est ici.
 <!-- SECTION:NOTES:END -->
