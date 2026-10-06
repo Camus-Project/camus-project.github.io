@@ -1,14 +1,13 @@
 ---
-id: task-21
+id: TASK-21
 title: 'codegen: minimal synchronous runtime for later/when/wait/ignore'
 status: Done
 assignee: []
 created_date: '2026-09-25 11:54'
-updated_date: '2026-09-28 16:06'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-20
+dependencies: []
 ---
 
 ## Description

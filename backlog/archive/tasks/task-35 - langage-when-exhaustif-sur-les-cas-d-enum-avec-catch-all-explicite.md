@@ -1,15 +1,12 @@
 ---
-id: task-35
+id: TASK-35
 title: 'langage: when exhaustif sur les cas d enum, avec catch-all explicite'
 status: To Do
 assignee: []
 created_date: '2026-09-30 09:23'
-updated_date: '2026-09-30 14:18'
+updated_date: '2026-10-06 14:26'
 labels: []
-dependencies:
-  - task-30
-  - task-32
-  - task-33
+dependencies: []
 ---
 
 ## Description

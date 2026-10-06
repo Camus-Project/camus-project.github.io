@@ -1,14 +1,13 @@
 ---
-id: task-40
+id: TASK-40
 title: 'langage v1.1: reecrire camus_runtime pour la nouvelle grammaire'
 status: To Do
 assignee: []
 created_date: '2026-10-01 20:36'
-updated_date: '2026-10-01 20:43'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-38
+dependencies: []
 ---
 
 ## Description

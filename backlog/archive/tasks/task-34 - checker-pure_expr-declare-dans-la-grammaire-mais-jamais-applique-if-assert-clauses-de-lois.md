@@ -1,17 +1,15 @@
 ---
-id: task-34
+id: TASK-34
 title: >-
   checker: pure_expr declare dans la grammaire mais jamais applique (if, assert,
   clauses de lois)
 status: To Do
 assignee: []
 created_date: '2026-09-30 07:55'
-updated_date: '2026-09-30 14:19'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-32
-  - task-14
+dependencies: []
 ---
 
 ## Description

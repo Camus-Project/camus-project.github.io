@@ -1,14 +1,13 @@
 ---
-id: task-36
+id: TASK-36
 title: 'codegen: is_result_value compare un nom Rust au lieu d un nom Camus'
 status: Done
 assignee: []
 created_date: '2026-09-30 20:43'
-updated_date: '2026-09-30 20:43'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-30
+dependencies: []
 ---
 
 ## Description

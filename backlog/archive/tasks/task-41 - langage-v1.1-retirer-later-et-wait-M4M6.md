@@ -1,15 +1,13 @@
 ---
-id: task-41
+id: TASK-41
 title: 'langage v1.1: retirer later et wait (M4+M6)'
 status: To Do
 assignee: []
 created_date: '2026-10-01 20:36'
-updated_date: '2026-10-01 20:43'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-38
-  - task-40
+dependencies: []
 ---
 
 ## Description

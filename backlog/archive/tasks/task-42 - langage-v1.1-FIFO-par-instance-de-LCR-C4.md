@@ -1,14 +1,13 @@
 ---
-id: task-42
+id: TASK-42
 title: 'langage v1.1: FIFO par instance de LCR (C4)'
 status: To Do
 assignee: []
 created_date: '2026-10-01 20:39'
-updated_date: '2026-10-01 20:43'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-40
+dependencies: []
 ---
 
 ## Description

@@ -1,15 +1,13 @@
 ---
-id: task-33
+id: TASK-33
 title: 'langage: declaration d enum et noeud Pattern (construction et sous-patterns)'
 status: To Do
 assignee: []
 created_date: '2026-09-29 15:33'
-updated_date: '2026-09-30 14:19'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-30
-  - task-32
+dependencies: []
 ---
 
 ## Description

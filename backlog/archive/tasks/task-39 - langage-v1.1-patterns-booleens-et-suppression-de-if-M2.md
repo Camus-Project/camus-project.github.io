@@ -1,14 +1,13 @@
 ---
-id: task-39
+id: TASK-39
 title: 'langage v1.1: patterns booleens et suppression de if (M2)'
 status: To Do
 assignee: []
 created_date: '2026-10-01 20:35'
-updated_date: '2026-10-01 20:43'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-38
+dependencies: []
 ---
 
 ## Description

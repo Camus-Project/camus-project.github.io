@@ -1,17 +1,16 @@
 ---
-id: task-29
+id: TASK-29
 title: >-
   codegen: App blueprint - struct concret dans Ctx, ctx.get(App), receiver
   app.op
 status: Done
 assignee: []
 created_date: '2026-09-29 11:39'
-updated_date: '2026-09-29 11:46'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
   - camus-pl-codegen
-dependencies:
-  - task-28
+dependencies: []
 ---
 
 ## Description

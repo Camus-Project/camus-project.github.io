@@ -1,15 +1,14 @@
 ---
-id: task-27
+id: TASK-27
 title: >-
   sample-project: App as server to TCC, TCC limited to lcr.standard for outgoing
   adaptation
 status: To Do
 assignee: []
 created_date: '2026-09-29 11:05'
-updated_date: '2026-09-30 14:19'
+updated_date: '2026-10-06 14:26'
 labels: []
-dependencies:
-  - task-24
+dependencies: []
 ---
 
 ## Description

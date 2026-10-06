@@ -1,15 +1,13 @@
 ---
-id: task-37
+id: TASK-37
 title: 'langage: when peut-il remplacer if (une ou deux constructions de branchement)'
 status: To Do
 assignee: []
 created_date: '2026-09-30 20:52'
-updated_date: '2026-10-01 20:34'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-32
-  - task-35
+dependencies: []
 ---
 
 ## Description

@@ -1,14 +1,13 @@
 ---
-id: task-22
+id: TASK-22
 title: 'codegen: debug_assert laws and full camus build to a working binary'
 status: Done
 assignee: []
 created_date: '2026-09-25 11:55'
-updated_date: '2026-09-28 20:57'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
-dependencies:
-  - task-21
+dependencies: []
 ---
 
 ## Description

@@ -6,11 +6,10 @@ title: >-
 status: To Do
 assignee: []
 created_date: '2026-09-29 12:34'
-updated_date: '2026-10-02 13:31'
+updated_date: '2026-10-06 14:26'
 labels:
   - camus-pl
 dependencies:
-  - task-30
   - task-33
   - task-35
 ---
